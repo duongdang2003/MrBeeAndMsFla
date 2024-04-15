@@ -66,12 +66,15 @@
   <ItemGroup>
     <Compile Include="Assets\Resources\Character\Enemy.cs" />
     <Compile Include="Assets\Resources\Character\Slime\Script\Slime.cs" />
+    <Compile Include="Assets\Resources\Character\Player\PlayerInput.cs" />
+    <Compile Include="Assets\Resources\Character\Player\Player.cs" />
+    <Compile Include="Assets\Resources\Object\Box\Box.cs" />
+    <Compile Include="Assets\Resources\Script\CheckPoint.cs" />
+    <Compile Include="Assets\Resources\Character\Player\PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Resources\kenney_blocky-characters\License.txt" />
     <None Include="Assets\Free Stylized Skybox\ReadMe.txt" />
     <None Include="Assets\Resources\Enviroment\Natural\kenney_nature-kit\License.txt" />
-    <None Include="Assets\Resources\kenney_animated-characters-1\License.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -914,6 +917,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
       <Private>False</Private>
@@ -1068,6 +1075,10 @@
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">

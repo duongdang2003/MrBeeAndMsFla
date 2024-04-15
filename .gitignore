@@ -72,3 +72,4 @@
 # /[Aa]ssets/[Ss]treamingAssets/aa/*
 *.sln
 /Temp/
+/Library/
