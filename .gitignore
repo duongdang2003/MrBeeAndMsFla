@@ -71,5 +71,10 @@
 # /[Aa]ssets/[Ss]treamingAssets/aa.meta
 # /[Aa]ssets/[Ss]treamingAssets/aa/*
 *.sln
+*.csproj
 /Temp/
 /Library/
+/Log/
+/UserSettings/
+/Build/
+/Builds/
