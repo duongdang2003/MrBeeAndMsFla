@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     // script
     protected PlayerInput playerInput;
     protected PlayerMovement playerMovement;
+    protected PlayerSkillController playerSkillController;
 
     // object
     protected GameObject box;
@@ -19,5 +20,6 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
         playerMovement = GetComponent<PlayerMovement>();
+        playerSkillController = GetComponent<PlayerSkillController>();
     }
 }

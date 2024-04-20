@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cae84034825fc68408277cc4695680f1, type: 3}
       propertyPath: m_Name
-      value: cliff_block_stone (6)
+      value: cliff_block_stone
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cae84034825fc68408277cc4695680f1, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -59,34 +59,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cae84034825fc68408277cc4695680f1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7181295397531374272}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cae84034825fc68408277cc4695680f1, type: 3}
---- !u!1 &5164403997316386209 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cae84034825fc68408277cc4695680f1, type: 3}
-  m_PrefabInstance: {fileID: 5434384337550946544}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &7181295397531374272
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5164403997316386209}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-  m_Center: {x: 0, y: 0.49999997, z: 0}

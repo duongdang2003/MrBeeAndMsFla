@@ -30,6 +30,13 @@ public class Slime : Enemy
         float interpolationFactor = Mathf.Clamp01(timeCount / 2);
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, target, 0), interpolationFactor);
         timeCount += Time.deltaTime;
+    }
+    private void FixedUpdate() {
+        if(!isDeath)
         rb.velocity = Vector3.forward * direction;
+    }
+    public override void Death(){
+        base.Death();
+        isDeath = true;
     }
 }

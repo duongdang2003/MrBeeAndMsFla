@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerMovement : Player
 {
-    public float runSpeed, jumpForce, timeCount = 0, target;
+    public float runSpeed, jumpForce, timeCount = 0, target, currentDir;
     private Vector2 dir;
     public Collider[] groundCheck;
-    private bool onGround = false, isJumping = false, isPulling = false;
+    private bool onGround = false, isJumping = false, isPulling = false, isDashing = false;
     public float x, y, z, radius;
     private void Update() {
         if(!isPulling){
@@ -31,17 +31,26 @@ public class PlayerMovement : Player
         } else {
             onGround = false;
         }
+        if(!isDashing)
         rb.velocity = new Vector3(0, rb.velocity.y, dir.x * playerMovement.runSpeed * Time.deltaTime);
     }
     public void SetDir(Vector2 direction){
         dir = direction;
         if(dir.x > 0){
             target = 0;
+            currentDir = 1;
         } else if(dir.x < 0) {
             target = -180;
+            currentDir = -1;
         }
         timeCount = 0;
 
+    }
+    public Vector2 GetDir(){
+        return dir;
+    }
+    public float GetCurrentDir(){
+        return currentDir;
     }
     // jump
     public void Jump(){
@@ -50,6 +59,9 @@ public class PlayerMovement : Player
             animator.SetTrigger("Jump");
             // isJumping = true;
         }
+    }
+    public void SetJumpForce(float force){
+        jumpForce = force;
     }
     // pull
     public void Pull(){
@@ -61,8 +73,12 @@ public class PlayerMovement : Player
             isPulling = true;
         }
     }
+    public void SetDashing(bool dashing){
+        isDashing = dashing;
+    }
     public void Disengage(){
-        if(box && GetComponent<FixedJoint>()){
+        if(box && GetComponent<FixedJoint>()
+        ){
             GetComponent<FixedJoint>().breakTorque = 0;
             GetComponent<FixedJoint>().breakForce = 0;
             animator.SetTrigger("Disengage");

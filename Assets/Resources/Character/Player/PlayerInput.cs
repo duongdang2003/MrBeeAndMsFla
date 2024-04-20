@@ -27,4 +27,19 @@ public class PlayerInput : Player
             playerMovement.Disengage();
         }
     }
+    public void Dash(InputAction.CallbackContext context){
+        if(context.performed){
+            playerSkillController.Dash();
+        }
+    }
+    public void HighJump(InputAction.CallbackContext context){
+        if(context.performed){
+            playerSkillController.HighJump();
+        }
+    }
+    public void LowGravity(InputAction.CallbackContext context){
+        if(context.performed){
+            playerSkillController.LowGravity();
+        }
+    }
 }
