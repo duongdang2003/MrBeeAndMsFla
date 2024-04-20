@@ -28,9 +28,9 @@ public class PlayerSkillController : Player
         ResetStats();
         isHighJump = !isHighJump;
         if(isHighJump)
-            playerMovement.SetJumpForce(45);
+            playerMovement.SetJumpForce(50);
         else
-            playerMovement.SetJumpForce(32);
+            playerMovement.SetJumpForce(43);
     }
     public void LowGravity(){
         ResetStats();
@@ -46,6 +46,6 @@ public class PlayerSkillController : Player
         canDash = true;
     }
     public void ResetStats(){
-        playerMovement.SetJumpForce(32);
+        playerMovement.SetJumpForce(43);
     }
 }

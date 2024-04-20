@@ -33,6 +33,9 @@ public class PlayerMovement : Player
         }
         if(!isDashing)
         rb.velocity = new Vector3(0, rb.velocity.y, dir.x * playerMovement.runSpeed * Time.deltaTime);
+
+        // gravity
+        rb.AddForce(Vector3.down * 9.81f, ForceMode.Acceleration);
     }
     public void SetDir(Vector2 direction){
         dir = direction;
