@@ -54,6 +54,9 @@ public class PlayerMovement : Player
         dir.y = verticalVelocity;
         if (!isDashing)
         rb.velocity = new Vector3(0, rb.velocity.y, dir.x * playerMovement.runSpeed * Time.deltaTime);
+
+        // gravity
+        rb.AddForce(Vector3.down * 9.81f, ForceMode.Acceleration);
     }
     public void SetDir(Vector2 direction){
         dir = direction;
@@ -94,6 +97,7 @@ public class PlayerMovement : Player
             FixedJoint fixedJoint = this.AddComponent<FixedJoint>();
             fixedJoint.connectedBody = box.GetComponent<Rigidbody>();
             fixedJoint.massScale = 10;
+            box.GetComponent<Rigidbody>().mass = 1.5f;
             animator.SetTrigger("InteractBox");
             isPulling = true;
         }
@@ -106,6 +110,7 @@ public class PlayerMovement : Player
         ){
             GetComponent<FixedJoint>().breakTorque = 0;
             GetComponent<FixedJoint>().breakForce = 0;
+            box.GetComponent<Rigidbody>().mass = 999;
             animator.SetTrigger("Disengage");
             isPulling = false;
         }

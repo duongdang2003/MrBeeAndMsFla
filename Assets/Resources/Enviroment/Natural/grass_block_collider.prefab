@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1270981595178915130, guid: 2ee4009940a4a2440bed66533bcd79c1, type: 3}
       propertyPath: m_Name
-      value: grass_block (148) Variant
+      value: grass_block_collider
       objectReference: {fileID: 0}
     - target: {fileID: 1939010378495332224, guid: 2ee4009940a4a2440bed66533bcd79c1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -84,5 +84,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 1, z: 35.063957}
-  m_Center: {x: 0, y: 0.6, z: 16.53267}
+  m_Size: {x: 2, y: 1, z: 1.9897597}
+  m_Center: {x: 0, y: 0.59999996, z: -0.004432485}

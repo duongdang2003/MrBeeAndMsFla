@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{0BCC9B01-8D7C-A54A-F6DD-CF54D952A446}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="24f11049-bf52-4ec5-ae72-341baf43745e" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Character/Player/PlayerMovement.cs">
+    <Files>
+      <File FileName="Assets/Resources/Character/Player/PlayerMovement.cs" Line="153" Column="1" />
+      <File FileName="Assets/Resources/Character/Player/PlayerInput.cs" Line="20" Column="31" />
+      <File FileName="Assets/Resources/Character/Player/PlayerSkillController.cs" Line="14" Column="53" />
+      <File FileName="Assets/Resources/Character/Player/PlayerCollision.cs" Line="1" Column="1" />
+      <File FileName="Assets/Resources/Character/Player/Player.cs" Line="13" Column="30" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MrBeeAndMsFla" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="Character" expanded="True">
+                  <Node name="Player" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
