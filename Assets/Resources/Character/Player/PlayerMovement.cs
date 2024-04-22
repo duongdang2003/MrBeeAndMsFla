@@ -72,6 +72,7 @@ public class PlayerMovement : Player
             FixedJoint fixedJoint = this.AddComponent<FixedJoint>();
             fixedJoint.connectedBody = box.GetComponent<Rigidbody>();
             fixedJoint.massScale = 10;
+            box.GetComponent<Rigidbody>().mass = 1.5f;
             animator.SetTrigger("InteractBox");
             isPulling = true;
         }
@@ -84,6 +85,7 @@ public class PlayerMovement : Player
         ){
             GetComponent<FixedJoint>().breakTorque = 0;
             GetComponent<FixedJoint>().breakForce = 0;
+            box.GetComponent<Rigidbody>().mass = 999;
             animator.SetTrigger("Disengage");
             isPulling = false;
         }
