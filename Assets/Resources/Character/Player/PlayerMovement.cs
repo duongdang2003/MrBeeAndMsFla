@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerMovement : Player
 {
-    public float runSpeed, jumpForce, timeCount = 0, target, currentDir;
+    public float runSpeed, jumpForce, timeCount = 0, target, currentDir, gravity;
     private Vector2 dir;
     public Collider[] groundCheck;
     private bool onGround = false, isJumping = false, isPulling = false, isDashing = false;
@@ -35,7 +35,7 @@ public class PlayerMovement : Player
         rb.velocity = new Vector3(0, rb.velocity.y, dir.x * playerMovement.runSpeed * Time.deltaTime);
 
         // gravity
-        rb.AddForce(Vector3.down * 9.81f, ForceMode.Acceleration);
+        rb.AddForce(Vector3.down * gravity, ForceMode.Acceleration);
     }
     public void SetDir(Vector2 direction){
         dir = direction;
