@@ -8,7 +8,6 @@ public class PlayerMovement : Player
 {
     public float runSpeed, jumpForce, timeCount = 0, target, currentDir, gravity;
     private Vector2 dir;
-    [SerializeField] private float gravity = 9.81f;
     public Collider[] groundCheck;
     private bool onGround = false, isJumping = false, isPulling = false, isDashing = false;
     public float x, y, z, radius;
