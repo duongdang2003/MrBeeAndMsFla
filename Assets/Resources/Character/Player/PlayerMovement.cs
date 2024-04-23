@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using Unity.VisualScripting;
@@ -98,6 +99,23 @@ public class PlayerMovement : Player
     }
     public void SetBox(GameObject currentBox){
         box = currentBox;
+    }
+    public void EndDash(){
+        if(!IsOnGround()){
+            // animator.SetTrigger("DashToJump");
+            animator.SetBool("DashToJump", true);
+            setJumping();
+            // StartCoroutine(ClearTrigger());
+            } else {
+                animator.SetTrigger("Idle");
+            }
+    }
+    IEnumerator ClearTrigger(){
+        yield return new WaitForSeconds(0.1f);
+        animator.SetBool("DashToJump", false);
+        animator.ResetTrigger("Land");
+        animator.ResetTrigger("Jump");
+
     }
     private void OnDrawGizmos() {
         Gizmos.DrawSphere(new Vector3(transform.position.x + x, transform.position.y + y,

@@ -14,6 +14,7 @@ public class PlayerSkillController : Player
             rb.velocity = new Vector3(0, gravityTest, rb.velocity.z);
         }
     }
+    // dash
     public void Dash(){
         if(canDash){
             dashDir = transform.localScale.x > 0 ? 1 : -1;
@@ -22,8 +23,10 @@ public class PlayerSkillController : Player
             StartCoroutine(StopDashing());
             StartCoroutine(CoolDownDashing());
             canDash = false;
+            animator.SetTrigger("Dash");
         }
     }
+    // high jump
     public void HighJump(){
         ResetStats();
         isHighJump = !isHighJump;
@@ -32,6 +35,7 @@ public class PlayerSkillController : Player
         else
             playerMovement.SetJumpForce(43);
     }
+    //low gravity
     public void LowGravity(){
         ResetStats();
         isLowGravity = !isLowGravity;
