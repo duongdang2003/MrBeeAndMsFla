@@ -9,6 +9,7 @@ public class PlayerInput : Player
     public void Move(InputAction.CallbackContext context){
         if(context.performed){
             playerMovement.SetDir(context.ReadValue<Vector2>());
+            Debug.Log(context.ReadValue<Vector2>());
             animator.SetBool("Run", true);
         } else if(context.canceled){
             playerMovement.SetDir(Vector2.zero);
