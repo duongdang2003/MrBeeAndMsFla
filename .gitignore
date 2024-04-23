@@ -74,7 +74,7 @@
 *.csproj
 /Temp/
 /Library/
-/Log/
+/Logs/
 /UserSettings/
 /Build/
 /Builds/
