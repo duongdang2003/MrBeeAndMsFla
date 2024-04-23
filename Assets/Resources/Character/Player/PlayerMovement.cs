@@ -11,28 +11,48 @@ public class PlayerMovement : Player
     public Collider[] groundCheck;
     private bool onGround = false, isJumping = false, isPulling = false, isDashing = false;
     public float x, y, z, radius;
-    private void Update() {
+    public float verticalVelocity;
+    private Vector3 dropVector;
+    private bool wallLeft;
+    private bool wallRight;
+    public Transform orientation;
+    private RaycastHit leftWallhit;
+    private RaycastHit rightWallhit;
+    public float wallCheckDistance;
+    public LayerMask whatIsWall;
+    private bool exitingWall;
+    public float exitWallTime;
+    private float exitWallTimer;
+    public float wallJumpUpForce;
+    public float wallJumpSideForce;
+    private void Update()
+    {
         if(!isPulling){
             float interpolationFactor = Mathf.Clamp01(timeCount / 0.5f);
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, target, 0), interpolationFactor);
             timeCount += Time.deltaTime;
-        }   
-        
+        }
+        CheckForWall();
+
     }
     private void FixedUpdate()
     {
         groundCheck = Physics.OverlapSphere(transform.position, 0.2f, 1<< 3 | 1 << 6);
         if(groundCheck.Length > 0){
             onGround = true;
+            verticalVelocity = -1;
             if (isJumping)
             {
                 animator.SetTrigger("Land");
                 isJumping = false;
+                verticalVelocity = jumpForce;
             }
         } else {
             onGround = false;
+            verticalVelocity -= gravity * Time.deltaTime;
         }
-        if(!isDashing)
+        dir.y = verticalVelocity;
+        if (!isDashing)
         rb.velocity = new Vector3(0, rb.velocity.y, dir.x * playerMovement.runSpeed * Time.deltaTime);
 
         // gravity
@@ -58,10 +78,14 @@ public class PlayerMovement : Player
     }
     // jump
     public void Jump(){
-        if(IsOnGround() && !isJumping){
+        if (IsOnGround() && !isJumping)
+        {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             animator.SetTrigger("Jump");
             // isJumping = true;
+        }else if (!IsOnGround() && isJumping && (wallLeft || wallRight))
+        {
+            WallJump();
         }
     }
     public void SetJumpForce(float force){
@@ -121,5 +145,39 @@ public class PlayerMovement : Player
         Gizmos.DrawSphere(new Vector3(transform.position.x + x, transform.position.y + y,
         transform.position.z + z), radius);
     }
-    
+    private void CheckForWall()
+    {
+        wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallhit, wallCheckDistance, whatIsWall);
+        wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallhit, wallCheckDistance, whatIsWall);
+        OnDrawGizmos123();
+    }
+    private void WallJump()
+    {
+        // enter exiting wall state
+        exitingWall = true;
+        exitWallTimer = exitWallTime;
+
+        Vector3 wallNormal = wallRight ? rightWallhit.normal : leftWallhit.normal;
+
+        Vector3 forceToApply = transform.up * wallJumpUpForce + wallNormal * wallJumpSideForce;
+
+        // reset y velocity and add force
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        rb.AddForce(forceToApply, ForceMode.Impulse);
+    }
+    void OnDrawGizmos123()
+    {
+        //// Perform the raycast
+        //if (Physics.Raycast(transform.position, -orientation.right, out leftWallhit, wallCheckDistance, whatIsWall))
+        //{
+        //    // Draw a raycast using Gizmos
+        //    Gizmos.color = Color.red;
+        //    //Gizmos.DrawLine(transform.position, leftWallhit.point);
+        //}
+        //if(Physics.Raycast(transform.position,orientation.right,out rightWallhit, wallCheckDistance, whatIsWall))
+        //{
+        //    Gizmos.color = Color.blue;
+        //    //Gizmos.DrawLine(transform.position, rightWallhit.point);
+        //}
+    }
 }
