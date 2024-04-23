@@ -167,17 +167,17 @@ public class PlayerMovement : Player
     }
     void OnDrawGizmos123()
     {
-        // Perform the raycast
-        if (Physics.Raycast(transform.position, -orientation.right, out leftWallhit, wallCheckDistance, whatIsWall))
-        {
-            // Draw a raycast using Gizmos
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, leftWallhit.point);
-        }
-        if(Physics.Raycast(transform.position,orientation.right,out rightWallhit, wallCheckDistance, whatIsWall))
-        {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawLine(transform.position, rightWallhit.point);
-        }
+        //// Perform the raycast
+        //if (Physics.Raycast(transform.position, -orientation.right, out leftWallhit, wallCheckDistance, whatIsWall))
+        //{
+        //    // Draw a raycast using Gizmos
+        //    Gizmos.color = Color.red;
+        //    //Gizmos.DrawLine(transform.position, leftWallhit.point);
+        //}
+        //if(Physics.Raycast(transform.position,orientation.right,out rightWallhit, wallCheckDistance, whatIsWall))
+        //{
+        //    Gizmos.color = Color.blue;
+        //    //Gizmos.DrawLine(transform.position, rightWallhit.point);
+        //}
     }
 }
