@@ -21,35 +21,59 @@ public class PlayerSkillController : Player
             isDashing = true;
             playerMovement.SetDashing(true);
             StartCoroutine(StopDashing());
-            StartCoroutine(CoolDownDashing());
+            // StartCoroutine(CoolDownDashing());
             canDash = false;
             animator.SetTrigger("Dash");
+            playerUI.DisableDash();
         }
     }
     // high jump
     public void HighJump(){
-        ResetStats();
+        if(playerMovement.IsOnGround() && !playerMovement.IsCasting()){
+            animator.SetTrigger("UseOrb");
+            animator.SetFloat("OrbNum", 0);
+        }
+        
+    }
+    public void SetHighJump(){
         isHighJump = !isHighJump;
-        if(isHighJump)
-            playerMovement.SetJumpForce(50);
-        else
-            playerMovement.SetJumpForce(43);
+        if(isHighJump){
+            playerMovement.SetJumpForce(40);
+            isLowGravity = false;
+            playerUI.UpdateSkill(1);
+        } else {
+            playerMovement.SetJumpForce(32);
+            playerUI.UpdateSkill(0);
+        }
     }
     //low gravity
     public void LowGravity(){
-        ResetStats();
+        if(playerMovement.IsOnGround() && !playerMovement.IsCasting()){
+            animator.SetTrigger("UseOrb");
+            animator.SetFloat("OrbNum", 1);
+        }
+        
+    }
+    public void SetLowGravity(){
         isLowGravity = !isLowGravity;
+        if (isLowGravity)
+        {
+            ResetJump();
+            playerUI.UpdateSkill(2);
+        } else {
+            playerUI.UpdateSkill(0);
+        }
     }
     IEnumerator StopDashing(){
         yield return new WaitForSeconds(dashTime);
         isDashing = false;
         playerMovement.SetDashing(false);
     }
-    IEnumerator CoolDownDashing(){
-        yield return new WaitForSeconds(2);
+    public void ActiveDashing(){
         canDash = true;
     }
-    public void ResetStats(){
-        playerMovement.SetJumpForce(43);
+    public void ResetJump(){
+        isHighJump = false;
+        playerMovement.SetJumpForce(32);
     }
 }

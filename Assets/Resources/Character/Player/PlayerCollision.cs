@@ -8,5 +8,20 @@ public class PlayerCollision : Player
         if(other.gameObject.CompareTag("Slime")) {
             other.gameObject.transform.parent.GetComponent<Slime>().Death();
         }
+        if(other.gameObject.CompareTag("DoorDeadZone")){
+            Debug.Log("door dead zone");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.CompareTag("Note")) {
+            playerUI.DisplayInterractButton();
+            playerInteract.SetCurrentObject(other.gameObject);
+        }
+    }
+    private void OnTriggerExit(Collider other) {
+        if(other.CompareTag("Note")) {
+            playerUI.HideInteractButton();
+        }
     }
 }

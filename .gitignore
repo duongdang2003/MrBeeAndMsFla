@@ -72,12 +72,14 @@
 # /[Aa]ssets/[Ss]treamingAssets/aa/*
 *.sln
 *.csproj
+*.log
 /Temp/
 /Library/
 /Logs/
 /UserSettings/
 /Build/
 /Builds/
+/.vs/
 *.pidb.meta
 *.pdb.meta
 *.mdb.meta

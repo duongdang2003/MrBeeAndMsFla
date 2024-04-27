@@ -1,0 +1,50 @@
+using System.Collections;
+using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
+using TMPro;
+using UnityEngine;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
+
+public class Launcher : MonoBehaviourPunCallbacks
+{
+    public static Launcher instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    [Header("Panel")]
+
+    [SerializeField] GameObject menuPanel;
+    [SerializeField] GameObject loadingPanel;
+    [SerializeField] GameObject createRoomPanel;
+    [SerializeField] GameObject findRoomPanel;
+    [SerializeField] GameObject roomPanel;
+
+    [Header("Text")]
+
+    [SerializeField] TMP_InputField roomNameInput;
+    [SerializeField] TMP_Text roomName, playerName;
+    [SerializeField] Transform content;
+    [SerializeField] Transform playerJoinRoom;
+    [SerializeField] TMP_Text nickNameText;
+    private string nickName;
+
+    [Header("Button")]
+
+    [SerializeField] GameObject startButton;
+    [SerializeField] GameObject readyButton;
+    public RoomButton roomButton;
+    private List<RoomButton> allRoomButtons = new List<RoomButton>();
+    private List<TMP_Text> allPlayerNames = new List<TMP_Text>();
+    private Dictionary<string, RoomInfo> cachedRoomList = new Dictionary<string, RoomInfo>();
+    private List<RoomInfo> roomsActive;
+
+    [Header("StarGame")]
+
+    [SerializeField] GameObject User;
+    private GameObject hasReady;
+    private bool isReady = false;
+    [SerializeField] string Map;
+    //private List<User> users = new List<User>();
+}
