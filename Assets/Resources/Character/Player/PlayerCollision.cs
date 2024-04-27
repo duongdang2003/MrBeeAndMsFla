@@ -8,8 +8,11 @@ public class PlayerCollision : Player
         if(other.gameObject.CompareTag("Slime")) {
             other.gameObject.transform.parent.GetComponent<Slime>().Death();
         }
-        if(other.gameObject.CompareTag("DoorDeadZone")){
-            Debug.Log("door dead zone");
+        if(other.gameObject.CompareTag("DoorDeadZone") ||
+           other.gameObject.CompareTag("Spike")){
+            
+            // reload scene here
+
         }
     }
 

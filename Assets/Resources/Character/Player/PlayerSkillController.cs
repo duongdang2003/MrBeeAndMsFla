@@ -35,6 +35,7 @@ public class PlayerSkillController : Player
         }
         
     }
+    
     public void SetHighJump(){
         isHighJump = !isHighJump;
         if(isHighJump){
