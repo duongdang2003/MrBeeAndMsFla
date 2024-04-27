@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.56158954, g: 0.7218089, b: 0.817857, a: 1}
+  m_IndirectSpecularColor: {r: 0.56159216, g: 0.7218083, b: 0.81785756, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -78436,7 +78436,7 @@ GameObject:
   - component: {fileID: 1839096815}
   - component: {fileID: 1839096814}
   - component: {fileID: 1839096817}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
