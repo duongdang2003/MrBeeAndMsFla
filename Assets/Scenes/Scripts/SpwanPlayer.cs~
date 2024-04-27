@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using Photon.Pun;
+using UnityEngine;
+
+public class SpwanPlayer : MonoBehaviour
+{
+    public static SpwanPlayer instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    [SerializeField] GameObject playerPrefab1;
+    [SerializeField] GameObject playerPrefab2;
+    void Start()
+    {
+        if (PhotonNetwork.IsConnected)
+        {
+            SpawnPlayer();
+        }
+    }
+    public void SpawnPlayer()
+    {
+        string playerName = PhotonNetwork.LocalPlayer.NickName;
+        GameObject player;
+        if (PhotonNetwork.IsMasterClient)
+        {
+            player = PhotonNetwork.Instantiate(this.playerPrefab.name, spawnPoint1.position, spawnPoint1.rotation);
+        }
+        else
+        {
+            player = PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint2.position, spawnPoint2.rotation);
+        }
+
+    }
+}
