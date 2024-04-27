@@ -5,8 +5,8 @@ using UnityEngine;
 public class Pressure : MonoBehaviour
 {
     public GameObject door;
-    public float step, maxY;
-    public bool isPressed = false, lowerPlate = false;
+    public float step, maxY, objCount = 0;
+    public bool isPressed = false, isLowerPlate = false;
     private float originY;
     private Rigidbody doorRb;
     private void Awake() {
@@ -24,13 +24,29 @@ public class Pressure : MonoBehaviour
         }
 
     }
-    private void OnCollisionEnter(Collision other) {
-        isPressed = true;
-        transform.position -= new Vector3(0, 0.01f, 0);
+
+    private void OnTriggerEnter(Collider other) {
+        int objLayer = other.gameObject.layer;
+        if(objLayer == LayerMask.NameToLayer("Box") || objLayer == LayerMask.NameToLayer("Player")){
+            objCount++;
+            isPressed = true;
+            if(!isLowerPlate){
+                transform.position -= new Vector3(0, 0.01f, 0);
+                isLowerPlate = true;
+            }
+        }
+        
     }
-    private void OnCollisionExit(Collision other) {
-        isPressed = false;
-        transform.position += new Vector3(0, 0.01f, 0);
+    private void OnTriggerExit(Collider other) {
+        int objLayer = other.gameObject.layer;
+        if(objLayer == LayerMask.NameToLayer("Box") || objLayer == LayerMask.NameToLayer("Player")){
+            objCount--;
+        }
+        if(objCount == 0){
+            isPressed = false;
+            transform.position += new Vector3(0, 0.01f, 0);
+            isLowerPlate = false;
+        }
+        
     }
- 
 }

@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Slime
+  - DoorDeadZone
+  - Note
+  - InteractButton
+  - NoteUI
+  - NoteContent
   layers:
   - Default
   - TransparentFX

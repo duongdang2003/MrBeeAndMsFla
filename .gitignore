@@ -79,6 +79,7 @@
 /UserSettings/
 /Build/
 /Builds/
+/.vs/
 *.pidb.meta
 *.pdb.meta
 *.mdb.meta
