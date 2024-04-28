@@ -165,7 +165,13 @@ public class PlayerMovement : Player
     public void StartCasting(){
         isCasting = true;
     }
+    public void StartCasting2(){
+        isCasting = true;
+    }
     public void EndCasting(){
+        isCasting = false;
+    }
+    public void EndCasting2(){
         isCasting = false;
     }
     public void RightFootSmoke(){

@@ -10,6 +10,8 @@ TagManager:
   - InteractButton
   - NoteUI
   - NoteContent
+  - Spike
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Player
   - Enemy
   - Wall
-  - 
+  - Object
   - 
   - 
   - 
