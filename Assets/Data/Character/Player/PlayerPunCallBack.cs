@@ -43,7 +43,7 @@ public class PlayerPunCallBack :Player
         playerMovement.SetJumpForce(heigh);
     }
     [PunRPC]
-    public void SetHighJumpOther()
+    public void SetHighJumpOther(int ab)
     {
         playerSkillController.ToggleHighJump();
     }
@@ -53,7 +53,7 @@ public class PlayerPunCallBack :Player
         playerUI.UpdateSkill(activeSkill);
     }
     [PunRPC]
-    public void SetLowGravityOther()
+    public void SetLowGravityOther(int ab)
     {
         playerSkillController.ToggleLowGravity();
     }
