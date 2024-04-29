@@ -10,11 +10,10 @@ TagManager:
   - InteractButton
   - NoteUI
   - NoteContent
-  - Spike
-  - Bullet
-  - DashUI
-  - HighJumpUI
-  - LowGravityUI
+  - Dash
+  - HighJump
+  - LowGravity
+  - Content
   layers:
   - Default
   - TransparentFX

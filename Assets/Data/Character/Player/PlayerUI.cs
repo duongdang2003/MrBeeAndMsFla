@@ -21,6 +21,10 @@ public class PlayerUI : Player
             interactButton = GameObject.FindWithTag("InteractButton");
             interactButton.SetActive(false);
             noteUI = GameObject.FindWithTag("NoteUI");
+            skills[0] = GameObject.FindGameObjectWithTag("Dash");
+            skills[1] = GameObject.FindGameObjectWithTag("HighJump");
+            skills[2] = GameObject.FindGameObjectWithTag("LowGravity");
+            noteContent = GameObject.FindGameObjectWithTag("Content");
         }
         else
         {

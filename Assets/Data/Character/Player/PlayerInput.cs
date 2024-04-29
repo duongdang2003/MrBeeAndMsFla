@@ -16,11 +16,15 @@ public class PlayerInput : Player
             if (context.performed && isListeningInput)
             {
                 playerMovement.SetDir(context.ReadValue<Vector2>());
+                playerPunCallBack.photonView.RPC("PlayerSetDir", Photon.Pun.RpcTarget.Others, context.ReadValue<Vector2>());
+                playerPunCallBack.photonView.RPC("AnimatorSetBoolByName", Photon.Pun.RpcTarget.Others,"Run", true);
                 animator.SetBool("Run", true);
             }
             else if (context.canceled)
             {
                 playerMovement.SetDir(Vector2.zero);
+                playerPunCallBack.photonView.RPC("PlayerSetDir", Photon.Pun.RpcTarget.Others, Vector2.zero);
+                playerPunCallBack.photonView.RPC("AnimatorSetBoolByName", Photon.Pun.RpcTarget.Others,"Run", false);
                 animator.SetBool("Run", false);
             }
         }

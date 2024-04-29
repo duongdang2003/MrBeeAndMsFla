@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using Photon.Pun;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -68,14 +69,27 @@ public class PlayerMovement : Player
                 verticalVelocity -= gravity * Time.deltaTime;
             }
             dir.y = verticalVelocity;
-            if (!isDashing && !isCasting)
+            if (!isDashing && !isCasting && photonView.IsMine)
+            {
+                playerPunCallBack.photonView.RPC("MoveVelocity", RpcTarget.Others, new Vector3(0, rb.velocity.y, dir.x * runSpeed * Time.deltaTime));
+            }
             rb.velocity = new Vector3(0, rb.velocity.y, dir.x * playerMovement.runSpeed * Time.deltaTime);
 
             // gravity
-            rb.AddForce(Vector3.down * gravity, ForceMode.Acceleration);
+            //rb.AddForce(Vector3.down * gravity, ForceMode.Acceleration);
         }
-        
     }
+    //[PunRPC]
+    //public void AnimatorRunOther(bool check)
+    //{
+    //    animator.SetBool("Run", check);
+    //}
+    //[PunRPC]
+    //public void MoveVelocity(Vector3 velocity)
+    //{
+    //    rb.velocity = velocity;
+
+    //}
     public void SetDir(Vector2 direction){
         dir = direction;
         if(dir.x > 0){
@@ -86,8 +100,12 @@ public class PlayerMovement : Player
             currentDir = -1;
         }
         timeCount = 0;
-
     }
+    //[PunRPC]
+    //public void PlayerSetDir(Vector2 direction)
+    //{
+    //    playerMovement.SetDir(direction);
+    //}
     public Vector2 GetDir(){
         return dir;
     }
@@ -100,12 +118,25 @@ public class PlayerMovement : Player
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             animator.SetTrigger("Jump");
+            playerPunCallBack.photonView.RPC("JumpOther", RpcTarget.Others, jumpForce);
+            playerPunCallBack.photonView.RPC("AnimatorSetTriggerByName", RpcTarget.Others, "Jump");
             // isJumping = true;
         }else if (!IsOnGround() && isJumping && !isCasting && (wallLeft || wallRight))
         {
             WallJump();
         }
     }
+    //[PunRPC]
+    //private void JumpOther(float jumpForce)
+    //{
+    //    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    //}
+    //[PunRPC]
+    //public void AnimatorSetTriggerByName(string type)
+    //{
+    //    animator.SetTrigger(type);
+
+    //}
     public void SetJumpForce(float force){
         jumpForce = force;
     }
