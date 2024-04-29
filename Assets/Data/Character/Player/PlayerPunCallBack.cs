@@ -30,7 +30,6 @@ public class PlayerPunCallBack :Player
     public void MoveVelocity(Vector3 velocity)
     {
         rb.velocity = velocity;
-        Debug.Log(velocity);
     }
     [PunRPC]
     public void AnimatorSetBoolByName(string type,bool check)
@@ -43,9 +42,9 @@ public class PlayerPunCallBack :Player
         playerMovement.SetJumpForce(heigh);
     }
     [PunRPC]
-    public void SetHighJumpOther(int ab)
+    public void SetHighJumpOther(bool check)
     {
-        playerSkillController.ToggleHighJump();
+        playerSkillController.ToggleHighJump(check);
     }
     [PunRPC]
     public void UpdateSkillOther(int activeSkill)
@@ -53,9 +52,9 @@ public class PlayerPunCallBack :Player
         playerUI.UpdateSkill(activeSkill);
     }
     [PunRPC]
-    public void SetLowGravityOther(int ab)
+    public void SetLowGravityOther(bool check)
     {
-        playerSkillController.ToggleLowGravity();
+        playerSkillController.ToggleLowGravity(check);
     }
     [PunRPC]
     public void AnimatorSetFloatByName(string type, float value)
