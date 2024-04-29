@@ -34,39 +34,57 @@ public class PlayerSkillController : Player
             animator.SetTrigger("UseOrb");
             playerMovement.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "UseOrb");
             animator.SetFloat("OrbNum", 0);
+            playerPunCallBack.photonView.RPC("AnimatorSetFloatByName", Photon.Pun.RpcTarget.Others, "OrbNum", 0);
         }
-        
+
     }
     public void SetHighJump(){
-        isHighJump = !isHighJump;
+        ToggleHighJump();
+        playerPunCallBack.photonView.RPC("SetHighJumpOther", Photon.Pun.RpcTarget.Others);
         if(isHighJump){
             playerMovement.SetJumpForce(40);
             playerPunCallBack.photonView.RPC("JumpSkillOther", Photon.Pun.RpcTarget.Others, 40f);
             isLowGravity = false;
             playerUI.UpdateSkill(1);
+            playerPunCallBack.photonView.RPC("UpdateSkillOther", Photon.Pun.RpcTarget.Others, 1);
         } else {
             playerMovement.SetJumpForce(32);
             playerPunCallBack.photonView.RPC("JumpSkillOther", Photon.Pun.RpcTarget.Others, 32f);
             playerUI.UpdateSkill(0);
+            playerPunCallBack.photonView.RPC("UpdateSkillOther", Photon.Pun.RpcTarget.Others, 0);
+
         }
+    }
+    public void ToggleHighJump()
+    {
+        isHighJump = !isHighJump;
     }
     //low gravity
     public void LowGravity(){
         if(playerMovement.IsOnGround() && !playerMovement.IsCasting()){
             animator.SetTrigger("UseOrb");
-            playerMovement.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "UseOrb");
+            playerPunCallBack.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "UseOrb");
             animator.SetFloat("OrbNum", 1);
+            playerPunCallBack.photonView.RPC("AnimatorSetFloatByName", Photon.Pun.RpcTarget.Others, "OrbNum", 1);
         }
     }
     public void SetLowGravity(){
-        isLowGravity = !isLowGravity;
+        ToggleLowGravity();
+        playerPunCallBack.photonView.RPC("SetLowGravityOther", Photon.Pun.RpcTarget.Others);
         if (isLowGravity)
         {
             ResetJump();
             playerUI.UpdateSkill(2);
-        } else {
-            playerUI.UpdateSkill(0);
+            playerPunCallBack.photonView.RPC("UpdateSkillOther", Photon.Pun.RpcTarget.Others, 2);
         }
+        else {
+            playerUI.UpdateSkill(0);
+            playerPunCallBack.photonView.RPC("UpdateSkillOther", Photon.Pun.RpcTarget.Others, 0);
+        }
+    }
+    public void ToggleLowGravity()
+    {
+        isLowGravity = !isLowGravity;
     }
     IEnumerator StopDashing(){
         yield return new WaitForSeconds(dashTime);

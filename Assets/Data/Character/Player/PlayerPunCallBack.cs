@@ -42,5 +42,25 @@ public class PlayerPunCallBack :Player
     {
         playerMovement.SetJumpForce(heigh);
     }
+    [PunRPC]
+    public void SetHighJumpOther()
+    {
+        playerSkillController.ToggleHighJump();
+    }
+    [PunRPC]
+    public void UpdateSkillOther(int activeSkill)
+    {
+        playerUI.UpdateSkill(activeSkill);
+    }
+    [PunRPC]
+    public void SetLowGravityOther()
+    {
+        playerSkillController.ToggleLowGravity();
+    }
+    [PunRPC]
+    public void AnimatorSetFloatByName(string type, float value)
+    {
+        animator.SetFloat(type, value);
 
+    }
 }
