@@ -36,24 +36,37 @@ public class PlayerUI : Player
         }
     }
     public void UpdateSkill(int activeSkill){
-        for(int i=1; i < 3; i++){
-            if(i != activeSkill){
-                skills[i].GetComponentsInChildren<Image>()[0].color = new Color(DISABLE_COLOR, DISABLE_COLOR, DISABLE_COLOR, 1);
-                skills[i].GetComponentsInChildren<Image>()[1].color = new Color(DISABLE_COLOR, DISABLE_COLOR, DISABLE_COLOR, 1);
-            } else {
-                skills[i].GetComponentsInChildren<Image>()[0].color = new Color(255, 255, 255, 1);
-                skills[i].GetComponentsInChildren<Image>()[1].color = new Color(255, 255, 255, 1);
+        if (photonView.IsMine)
+        {
+            for (int i = 1; i < 3; i++)
+            {
+                if (i != activeSkill)
+                {
+                    skills[i].GetComponentsInChildren<Image>()[0].color = new Color(DISABLE_COLOR, DISABLE_COLOR, DISABLE_COLOR, 1);
+                    skills[i].GetComponentsInChildren<Image>()[1].color = new Color(DISABLE_COLOR, DISABLE_COLOR, DISABLE_COLOR, 1);
+                }
+                else
+                {
+                    skills[i].GetComponentsInChildren<Image>()[0].color = new Color(255, 255, 255, 1);
+                    skills[i].GetComponentsInChildren<Image>()[1].color = new Color(255, 255, 255, 1);
+                }
             }
         }
     }
     public void DisableDash(){
-        skills[0].GetComponentsInChildren<Image>()[0].color = new Color(DISABLE_COLOR, DISABLE_COLOR, DISABLE_COLOR, 1);
-        skills[0].GetComponentsInChildren<Image>()[1].color = new Color(DISABLE_COLOR, DISABLE_COLOR, DISABLE_COLOR, 1);
-        dashCoolDownTime = DISABLE_COLOR;
+        if (photonView.IsMine)
+        {
+            skills[0].GetComponentsInChildren<Image>()[0].color = new Color(DISABLE_COLOR, DISABLE_COLOR, DISABLE_COLOR, 1);
+            skills[0].GetComponentsInChildren<Image>()[1].color = new Color(DISABLE_COLOR, DISABLE_COLOR, DISABLE_COLOR, 1);
+            dashCoolDownTime = DISABLE_COLOR;
+        }
     }
     public void CoolDownDash(float step){
-        skills[0].GetComponentsInChildren<Image>()[0].color = new Color(step, step, step, 1);
-        skills[0].GetComponentsInChildren<Image>()[1].color = new Color(step, step, step, 1);
+        if (photonView.IsMine)
+        {
+            skills[0].GetComponentsInChildren<Image>()[0].color = new Color(step, step, step, 1);
+            skills[0].GetComponentsInChildren<Image>()[1].color = new Color(step, step, step, 1);
+        }
     }
     public void DisplayInterractButton(){
         interactButton.SetActive(true);
