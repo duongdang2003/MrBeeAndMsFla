@@ -47,6 +47,11 @@ MonoBehaviour:
   - JumpOther
   - AnimatorSetTriggerByName
   - AnimatorSetBoolByName
+  - JumpSkillOther
+  - SetLowGravityOther
+  - UpdateSkillOther
+  - AnimatorSetFloatByName
+  - SetHighJumpOther
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0
