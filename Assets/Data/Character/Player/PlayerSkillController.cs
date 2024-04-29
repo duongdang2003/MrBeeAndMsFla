@@ -41,12 +41,12 @@ public class PlayerSkillController : Player
         isHighJump = !isHighJump;
         if(isHighJump){
             playerMovement.SetJumpForce(40);
-            playerPunCallBack.photonView.RPC("JumpSkillOther", Photon.Pun.RpcTarget.Others, 40);
+            playerPunCallBack.photonView.RPC("JumpSkillOther", Photon.Pun.RpcTarget.Others, 40f);
             isLowGravity = false;
             playerUI.UpdateSkill(1);
         } else {
             playerMovement.SetJumpForce(32);
-            playerPunCallBack.photonView.RPC("JumpSkillOther", Photon.Pun.RpcTarget.Others, 32);
+            playerPunCallBack.photonView.RPC("JumpSkillOther", Photon.Pun.RpcTarget.Others, 32f);
             playerUI.UpdateSkill(0);
         }
     }
