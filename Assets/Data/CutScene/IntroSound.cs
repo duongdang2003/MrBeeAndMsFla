@@ -5,7 +5,7 @@ using UnityEngine;
 public class IntroSound : MonoBehaviour
 {
     public AudioClip[] audioClips;
-    // public AudioClip
+    public AudioClip typing;
     public AudioSource audioSource;
     public void PlayKeyBoardSound(){
         audioSource.Stop();
@@ -13,6 +13,9 @@ public class IntroSound : MonoBehaviour
     }
     public void PlayTypingSound(){
         audioSource.Stop();
-        // audioSource.Play()
+        audioSource.PlayOneShot(typing);
+    }
+    public void StopPlaySound(){
+        audioSource.Stop();
     }
 }
