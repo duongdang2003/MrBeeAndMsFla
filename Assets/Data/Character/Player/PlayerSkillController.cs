@@ -40,7 +40,7 @@ public class PlayerSkillController : Player
     }
     public void SetHighJump(){
         ToggleHighJump();
-        playerPunCallBack.photonView.RPC("SetHighJumpOther", Photon.Pun.RpcTarget.Others);
+        playerPunCallBack.photonView.RPC("SetHighJumpOther", Photon.Pun.RpcTarget.Others,0);
         if(isHighJump){
             playerMovement.SetJumpForce(40);
             playerPunCallBack.photonView.RPC("JumpSkillOther", Photon.Pun.RpcTarget.Others, 40f);
@@ -70,7 +70,7 @@ public class PlayerSkillController : Player
     }
     public void SetLowGravity(){
         ToggleLowGravity();
-        playerPunCallBack.photonView.RPC("SetLowGravityOther", Photon.Pun.RpcTarget.Others);
+        playerPunCallBack.photonView.RPC("SetLowGravityOther", Photon.Pun.RpcTarget.Others,0);
         if (isLowGravity)
         {
             ResetJump();
