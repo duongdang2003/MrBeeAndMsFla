@@ -12,6 +12,9 @@ TagManager:
   - NoteContent
   - Spike
   - Bullet
+  - DashUI
+  - HighJumpUI
+  - LowGravityUI
   layers:
   - Default
   - TransparentFX

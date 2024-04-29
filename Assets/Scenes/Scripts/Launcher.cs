@@ -270,6 +270,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     private void CheckAllPlayerReady()
     {
         Photon.Realtime.Player[] players = PhotonNetwork.PlayerList;
+        
         bool allPlayersReady = true;
         foreach (Photon.Realtime.Player player in players)
         {
