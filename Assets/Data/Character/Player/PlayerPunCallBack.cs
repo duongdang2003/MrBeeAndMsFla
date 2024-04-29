@@ -37,4 +37,10 @@ public class PlayerPunCallBack :Player
     {
         animator.SetBool(type, check);
     }
+    [PunRPC]
+    public void JumpSkillOther(float heigh)
+    {
+        playerMovement.SetJumpForce(heigh);
+    }
+
 }
