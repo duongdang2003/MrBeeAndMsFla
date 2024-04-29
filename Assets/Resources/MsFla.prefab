@@ -435,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 439f882415b53ca4eb2f734dcead20b4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1082271958561512970, guid: 439f882415b53ca4eb2f734dcead20b4, type: 3}
       propertyPath: m_Layer
@@ -675,7 +675,7 @@ MonoBehaviour:
   z: 0
   radius: 0.2
   verticalVelocity: 0
-  orientation: {fileID: 0}
+  orientation: {fileID: 1165976321223198584}
   wallCheckDistance: 5
   whatIsWall:
     serializedVersion: 2
@@ -877,7 +877,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb339d5988cddda46a918b3acfa08ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skills: []
+  skills:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   noteContent: {fileID: 0}
   camera: {fileID: 8221170349200716363}
 --- !u!114 &4919490271676354503
