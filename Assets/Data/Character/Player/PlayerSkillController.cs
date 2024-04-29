@@ -34,7 +34,7 @@ public class PlayerSkillController : Player
             animator.SetTrigger("UseOrb");
             playerMovement.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "UseOrb");
             animator.SetFloat("OrbNum", 0);
-            playerPunCallBack.photonView.RPC("AnimatorSetFloatByName", Photon.Pun.RpcTarget.Others, "OrbNum", 0);
+            playerPunCallBack.photonView.RPC("AnimatorSetFloatByName", Photon.Pun.RpcTarget.Others, "OrbNum", 0f);
         }
 
     }
@@ -66,7 +66,7 @@ public class PlayerSkillController : Player
             animator.SetTrigger("UseOrb");
             playerPunCallBack.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "UseOrb");
             animator.SetFloat("OrbNum", 1);
-            playerPunCallBack.photonView.RPC("AnimatorSetFloatByName", Photon.Pun.RpcTarget.Others, "OrbNum", 1);
+            playerPunCallBack.photonView.RPC("AnimatorSetFloatByName", Photon.Pun.RpcTarget.Others, "OrbNum", 1f);
         }
     }
     public void SetLowGravity(){
