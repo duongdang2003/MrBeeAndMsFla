@@ -12,9 +12,9 @@ public class PlayerUI : Player
     private float dashCoolDownTime = 1;
     [SerializeField] private GameObject camera;
     private void Start() {
-        skills[0] = GameObject.FindWithTag("DashUI");
-        skills[1] = GameObject.FindWithTag("HighJumpUI");
-        skills[2] = GameObject.FindWithTag("LowGravityUI");
+        //skills[0] = GameObject.FindWithTag("DashUI");
+        //skills[1] = GameObject.FindWithTag("HighJumpUI");
+        //skills[2] = GameObject.FindWithTag("LowGravityUI");
 
         if (photonView.IsMine)
         {

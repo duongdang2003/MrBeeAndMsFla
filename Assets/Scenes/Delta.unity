@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.56158954, g: 0.7218089, b: 0.817857, a: 1}
+  m_IndirectSpecularColor: {r: 0.56159216, g: 0.7218083, b: 0.81785756, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -92047,9 +92047,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1674795157670948441, guid: dc5bd7f36d716ee49b9384005b92bde8, type: 3}
+      propertyPath: m_TagString
+      value: HighJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402968524551612183, guid: dc5bd7f36d716ee49b9384005b92bde8, type: 3}
+      propertyPath: m_TagString
+      value: Dash
+      objectReference: {fileID: 0}
     - target: {fileID: 2495277558535083340, guid: dc5bd7f36d716ee49b9384005b92bde8, type: 3}
       propertyPath: m_Name
       value: MainUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808070790218724043, guid: dc5bd7f36d716ee49b9384005b92bde8, type: 3}
+      propertyPath: m_TagString
+      value: Content
       objectReference: {fileID: 0}
     - target: {fileID: 6118011352344724551, guid: dc5bd7f36d716ee49b9384005b92bde8, type: 3}
       propertyPath: m_Pivot.x
