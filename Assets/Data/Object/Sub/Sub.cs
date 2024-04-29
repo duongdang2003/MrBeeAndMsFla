@@ -32,7 +32,7 @@ public class Sub : MonoBehaviour
                 RunParagraph(paragraphs[paragrapthIndex]);
             }
         } else {
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.05f);
             subDisplay.text += paragraph[wordIndex];
             introSound.PlayKeyBoardSound();
             wordIndex++;

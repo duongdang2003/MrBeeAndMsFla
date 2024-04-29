@@ -92779,6 +92779,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MsFla
       objectReference: {fileID: 0}
+    - target: {fileID: 1974179612027444674, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374652885382870911, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8560078399696614438, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
       propertyPath: noteContent
       value: 
