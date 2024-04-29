@@ -85183,7 +85183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007615142}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0804303, y: -0.7025176, z: 0.080430314, w: 0.7025176}
+  m_LocalRotation: {x: 0.08043031, y: -0.70251757, z: 0.08043031, w: 0.7025177}
   m_LocalPosition: {x: 3.295, y: 4.342, z: 48.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -92778,6 +92778,38 @@ PrefabInstance:
     - target: {fileID: 1974179612027444674, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
       propertyPath: m_Name
       value: MsFla
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974179612027444674, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464365626535053281, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.785904
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464365626535053281, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.966567
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464365626535053281, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7025177
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464365626535053281, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.08043031
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464365626535053281, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70251757
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464365626535053281, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.08043031
+      objectReference: {fileID: 0}
+    - target: {fileID: 7374652885382870911, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: sceneViewId
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8560078399696614438, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
       propertyPath: noteContent
