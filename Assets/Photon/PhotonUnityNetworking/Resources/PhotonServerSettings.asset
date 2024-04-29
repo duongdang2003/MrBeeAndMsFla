@@ -45,12 +45,13 @@ MonoBehaviour:
   - MoveVelocity
   - AnimatorRunOther
   - AnimatorSetBoolByName
-  - AnimatorSetFloatByName
   - AnimatorSetTriggerByName
   - JumpOther
   - JumpSkillOther
   - SetHighJumpOther
   - SetLowGravityOther
+  - UpdateSkillOther
+  - AnimatorSetFloatByName
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0
