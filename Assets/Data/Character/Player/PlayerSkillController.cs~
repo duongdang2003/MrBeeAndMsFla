@@ -52,9 +52,9 @@ public class PlayerSkillController : Player
     public void LowGravity(){
         if(playerMovement.IsOnGround() && !playerMovement.IsCasting()){
             animator.SetTrigger("UseOrb");
-            playerMovement.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "UseOrb");
             animator.SetFloat("OrbNum", 1);
         }
+        
     }
     public void SetLowGravity(){
         isLowGravity = !isLowGravity;

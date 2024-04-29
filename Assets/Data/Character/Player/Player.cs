@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
-
+using Photon.Realtime;
 public class Player : MonoBehaviourPunCallbacks
 {
     // component
@@ -15,6 +15,7 @@ public class Player : MonoBehaviourPunCallbacks
     protected PlayerSkillController playerSkillController;
     protected PlayerUI playerUI;
     protected PlayerInteract playerInteract;
+    protected PlayerPunCallBack playerPunCallBack;
     // object
     protected GameObject box;
     private void Awake() {
@@ -28,5 +29,6 @@ public class Player : MonoBehaviourPunCallbacks
         playerSkillController = GetComponent<PlayerSkillController>();
         playerUI = GetComponent<PlayerUI>();
         playerInteract = GetComponent<PlayerInteract>();
+        playerPunCallBack = GetComponent<PlayerPunCallBack>();
     }
 }

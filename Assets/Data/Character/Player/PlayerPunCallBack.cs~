@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using Photon.Pun;
+using UnityEngine;
+
+public class PlayerPunCallBack :Player
+{
+    [PunRPC]
+    public void JumpOther(float jumpForce)
+    {
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+    [PunRPC]
+    public void AnimatorSetTriggerByName(string type)
+    {
+        animator.SetTrigger(type);
+
+    }
+}
