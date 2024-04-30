@@ -101,11 +101,11 @@ public class PlayerPunCallBack :Player
     [PunRPC]
     public void HighJumpPressOther()
     {
-        playerSkillController.HighJump();
+        playerSkillController.SetHighJump();
     }
     [PunRPC]
     public void LowGravityPressOther()
     {
-        playerSkillController.LowGravity();
+        playerSkillController.SetLowGravity();
     }
 }
