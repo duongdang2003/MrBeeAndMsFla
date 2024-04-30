@@ -15,9 +15,9 @@ public class PlayerInteract : Player
     public void Interact(){
         SetInteract();
         if(currentObject != null && isInteracting){
-            PauseScene();
+            // PauseScene();
         } else if(currentObject != null && !isInteracting){
-            ContinueScene();
+            // ContinueScene();
         }
         switch (currentObject.tag)
         {
