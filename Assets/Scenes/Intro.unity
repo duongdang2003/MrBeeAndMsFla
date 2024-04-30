@@ -737,7 +737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!320 &432874009
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -781,6 +781,8 @@ PlayableDirector:
     value: {fileID: 224976418}
   - key: {fileID: -9094949923494334512, guid: b8d6f3477dd10fc4abd27f10d44f6869, type: 2}
     value: {fileID: 137068528}
+  - key: {fileID: 507538373032569321, guid: b8d6f3477dd10fc4abd27f10d44f6869, type: 2}
+    value: {fileID: 1265984581}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &432874010
@@ -808,6 +810,55 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: cfd5a8d7a95901247ba1704fe44a54e2, type: 3}
   m_PrefabInstance: {fileID: 1965827954}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &638171440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 638171442}
+  - component: {fileID: 638171441}
+  m_Layer: 0
+  m_Name: MainTimeline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &638171441
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638171440}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: dac67479d19afd441801bb0a10e97c28, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
+--- !u!4 &638171442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638171440}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 739.33276, y: 466.99103, z: -379.8891}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &871948313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,7 +1486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0015564, y: -130}
+  m_AnchoredPosition: {x: 0.0015564, y: 210}
   m_SizeDelta: {x: 1636.4, y: 198.77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1265984583
@@ -1492,7 +1543,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paragraphs:
-  - There are space explorer
+  - One day their device caught a strange signal from another planet. It looks like...
+    SOS signal.
 --- !u!114 &1265984586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1526,7 +1578,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: There are Space Explorer
+  m_Text: 
 --- !u!222 &1265984587
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3469,3 +3521,4 @@ SceneRoots:
   - {fileID: 1672924583}
   - {fileID: 1965827954}
   - {fileID: 1261842455}
+  - {fileID: 638171442}

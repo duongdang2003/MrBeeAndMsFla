@@ -50,8 +50,13 @@ public class PlayerMovement : Player
         }
         if (photonView.IsMine)
         {
-            playerPunCallBack.photonView.RPC("SetUpdatePositionOther", RpcTarget.Others, transform.position);
+            StartCoroutine(CallRPCAfterDelay());
         }
+    }
+    private IEnumerator CallRPCAfterDelay()
+    {
+        yield return new WaitForSeconds(5f); 
+        playerPunCallBack.photonView.RPC("SetUpdatePositionOther", RpcTarget.Others, transform.position);
     }
     private void FixedUpdate()
     {

@@ -56,9 +56,9 @@ MonoBehaviour:
   - UpdateSkillOther
   - DisengageOther
   - PullOther
-  - SetUIOther
   - HighJumpPressOther
   - LowGravityPressOther
+  - SetUIOther
   - SetUpdatePositionOther
   DisableAutoOpenWizard: 1
   ShowSettings: 1

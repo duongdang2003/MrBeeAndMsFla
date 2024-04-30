@@ -99,13 +99,13 @@ public class PlayerPunCallBack :Player
         transform.position = position;
     }
     [PunRPC]
-    public void HighJumpPressOther(InputAction.CallbackContext context)
+    public void HighJumpPressOther()
     {
-        playerInput.HighJump(context);
+        playerSkillController.HighJump();
     }
     [PunRPC]
-    public void LowGravityPressOther(InputAction.CallbackContext context)
+    public void LowGravityPressOther()
     {
-        playerInput.LowGravity(context);
+        playerSkillController.LowGravity();
     }
 }
