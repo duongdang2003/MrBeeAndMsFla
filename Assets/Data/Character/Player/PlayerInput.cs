@@ -66,6 +66,7 @@ public class PlayerInput : Player
             if (context.performed && isListeningInput)
             {
                 playerSkillController.HighJump();
+                playerPunCallBack.photonView.RPC("HighJumpPressOther", Photon.Pun.RpcTarget.Others, context);
             }
         }
     }
@@ -75,6 +76,7 @@ public class PlayerInput : Player
             if (context.performed && isListeningInput)
             {
                 playerSkillController.LowGravity();
+                playerPunCallBack.photonView.RPC("LowGravityPressOther", Photon.Pun.RpcTarget.Others, context);
             }
         }
     }

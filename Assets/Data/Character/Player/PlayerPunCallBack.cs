@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerPunCallBack :Player
 {
@@ -91,5 +92,20 @@ public class PlayerPunCallBack :Player
     public void SetUIOther()
     {
         playerUI.SetUI();
+    }
+    [PunRPC]
+    public void SetUpdatePositionOther(Vector3 position)
+    {
+        transform.position = position;
+    }
+    [PunRPC]
+    public void HighJumpPressOther(InputAction.CallbackContext context)
+    {
+        playerInput.HighJump(context);
+    }
+    [PunRPC]
+    public void LowGravityPressOther(InputAction.CallbackContext context)
+    {
+        playerInput.LowGravity(context);
     }
 }

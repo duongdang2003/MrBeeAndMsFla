@@ -76,8 +76,8 @@ public class PlayerMovement : Player
             }
             rb.velocity = new Vector3(0, rb.velocity.y, dir.x * playerMovement.runSpeed * Time.deltaTime);
         }
+        playerPunCallBack.photonView.RPC("SetUpdatePositionOther", RpcTarget.Others, transform.position);
     }
-
     public void SetDir(Vector2 direction){
         dir = direction;
         if(dir.x > 0){
