@@ -18,7 +18,6 @@ public class Player : MonoBehaviourPunCallbacks
     public PlayerPunCallBack playerPunCallBack;
     // object
     public GameObject box;
-    public GameObject[] playerWithTag;
     private void Awake() {
         // rigidbody
         rb = GetComponent<Rigidbody>();
@@ -31,6 +30,5 @@ public class Player : MonoBehaviourPunCallbacks
         playerUI = GetComponent<PlayerUI>();
         playerInteract = GetComponent<PlayerInteract>();
         playerPunCallBack = GetComponent<PlayerPunCallBack>();
-        playerWithTag = GameObject.FindGameObjectsWithTag("Player");
     }
 }

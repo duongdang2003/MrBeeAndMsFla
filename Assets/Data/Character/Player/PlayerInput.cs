@@ -7,6 +7,10 @@ using UnityEngine.InputSystem;
 public class PlayerInput : Player
 {
     private bool isListeningInput = true;
+    public GameObject[] playerWithTag;
+    private void Start() {
+        playerWithTag = GameObject.FindGameObjectsWithTag("Player");
+    }
     public void SetListeningInput(bool listeningInput){
         isListeningInput = listeningInput;
     }
