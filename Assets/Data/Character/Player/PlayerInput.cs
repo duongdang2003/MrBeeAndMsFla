@@ -10,7 +10,7 @@ public class PlayerInput : Player
     public void SetListeningInput(bool listeningInput){
         isListeningInput = listeningInput;
     }
-    private void Start()
+    private void Update()
     {
         playerWithTag = GameObject.FindGameObjectsWithTag("Player");
     }
