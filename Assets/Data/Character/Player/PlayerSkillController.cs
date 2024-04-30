@@ -38,9 +38,9 @@ public class PlayerSkillController : Player
         if (playerMovement.IsOnGround() && !playerMovement.IsCasting())
         {
             animator.SetFloat("OrbNum", 0);
-            //playerPunCallBack.photonView.RPC("AnimatorSetFloatByName", Photon.Pun.RpcTarget.Others, "OrbNum", 0f);
+            playerPunCallBack.photonView.RPC("AnimatorSetFloatByName", Photon.Pun.RpcTarget.Others, "OrbNum", 0f);
             animator.SetTrigger("UseOrb");
-            //playerMovement.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "UseOrb");
+            playerMovement.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "UseOrb");
         }
     }
     public void SetHighJump(){
@@ -73,9 +73,9 @@ public class PlayerSkillController : Player
         if (playerMovement.IsOnGround() && !playerMovement.IsCasting())
         {
             animator.SetFloat("OrbNum", 1);
-            //playerPunCallBack.photonView.RPC("AnimatorSetFloatByName", Photon.Pun.RpcTarget.Others, "OrbNum", 1f);
+            playerPunCallBack.photonView.RPC("AnimatorSetFloatByName", Photon.Pun.RpcTarget.Others, "OrbNum", 1f);
             animator.SetTrigger("UseOrb");
-            //playerPunCallBack.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "UseOrb");
+            playerPunCallBack.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "UseOrb");
         }
     }
     public void SetLowGravity(){
