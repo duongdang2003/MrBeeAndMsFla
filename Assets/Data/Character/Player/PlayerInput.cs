@@ -66,7 +66,15 @@ public class PlayerInput : Player
             if (context.performed && isListeningInput)
             {
                 playerSkillController.HighJump();
-                playerPunCallBack.photonView.RPC("HighJumpPressOther", Photon.Pun.RpcTarget.Others);
+                //playerPunCallBack.photonView.RPC("HighJumpPressOther", Photon.Pun.RpcTarget.Others);
+                for(int i = 0; i < playerWithTag.Length; i++)
+                {
+                    Player other = playerWithTag[i].GetComponent<Player>();
+                    if (!other.photonView.IsMine)
+                    {
+                        playerWithTag[i].GetComponent<Player>().playerPunCallBack.photonView.RPC("HighJumpPressOther", Photon.Pun.RpcTarget.Others);
+                    }
+                }
             }
         }
     }
@@ -76,7 +84,15 @@ public class PlayerInput : Player
             if (context.performed && isListeningInput)
             {
                 playerSkillController.LowGravity();
-                playerPunCallBack.photonView.RPC("LowGravityPressOther", Photon.Pun.RpcTarget.Others);
+                //playerPunCallBack.photonView.RPC("LowGravityPressOther", Photon.Pun.RpcTarget.Others);
+                for (int i = 0; i < playerWithTag.Length; i++)
+                {
+                    Player other = playerWithTag[i].GetComponent<Player>();
+                    if (!other.photonView.IsMine)
+                    {
+                        playerWithTag[i].GetComponent<Player>().playerPunCallBack.photonView.RPC("LowGravityPressOther", Photon.Pun.RpcTarget.Others);
+                    }
+                }
             }
         }
     }
