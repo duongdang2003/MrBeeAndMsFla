@@ -6,18 +6,19 @@ using Photon.Realtime;
 public class Player : MonoBehaviourPunCallbacks
 {
     // component
-    protected Rigidbody rb;
-    protected Animator animator;
+    public Rigidbody rb;
+    public Animator animator;
 
     // script
-    protected PlayerInput playerInput;
-    protected PlayerMovement playerMovement;
-    protected PlayerSkillController playerSkillController;
-    protected PlayerUI playerUI;
-    protected PlayerInteract playerInteract;
-    protected PlayerPunCallBack playerPunCallBack;
+    public PlayerInput playerInput;
+    public PlayerMovement playerMovement;
+    public PlayerSkillController playerSkillController;
+    public PlayerUI playerUI;
+    public PlayerInteract playerInteract;
+    public PlayerPunCallBack playerPunCallBack;
     // object
-    protected GameObject box;
+    public GameObject box;
+    public GameObject[] playerWithTag;
     private void Awake() {
         // rigidbody
         rb = GetComponent<Rigidbody>();
@@ -30,5 +31,9 @@ public class Player : MonoBehaviourPunCallbacks
         playerUI = GetComponent<PlayerUI>();
         playerInteract = GetComponent<PlayerInteract>();
         playerPunCallBack = GetComponent<PlayerPunCallBack>();
+    }
+    private void Start()
+    {
+        playerWithTag = GameObject.FindGameObjectsWithTag("Player");
     }
 }

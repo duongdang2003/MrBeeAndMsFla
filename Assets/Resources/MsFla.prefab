@@ -121,7 +121,7 @@ Transform:
   m_GameObject: {fileID: 8221170349200716363}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0804303, y: -0.7025176, z: 0.080430314, w: 0.7025176}
-  m_LocalPosition: {x: 12.785903, y: 2.9665668, z: 0}
+  m_LocalPosition: {x: 12.785904, y: 2.966567, z: 0}
   m_LocalScale: {x: 2.966567, y: 2.966567, z: 2.966567}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -435,7 +435,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 439f882415b53ca4eb2f734dcead20b4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 439f882415b53ca4eb2f734dcead20b4, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1082271958561512970, guid: 439f882415b53ca4eb2f734dcead20b4, type: 3}
       propertyPath: m_Layer
@@ -916,7 +920,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 1839171556414629951}
-  sceneViewId: 0
+  sceneViewId: 2
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &1839171556414629951
