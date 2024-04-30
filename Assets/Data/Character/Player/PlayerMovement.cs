@@ -61,6 +61,7 @@ public class PlayerMovement : Player
                 if (isJumping)
                 {
                     animator.SetTrigger("Land");
+                    playerPunCallBack.photonView.RPC("AnimatorSetTriggerByName", RpcTarget.Others, "Land");
                     isJumping = false;
                     verticalVelocity = jumpForce;
                 }
@@ -74,22 +75,9 @@ public class PlayerMovement : Player
                 playerPunCallBack.photonView.RPC("MoveVelocity", RpcTarget.Others, new Vector3(0, rb.velocity.y, dir.x * runSpeed * Time.deltaTime));
             }
             rb.velocity = new Vector3(0, rb.velocity.y, dir.x * playerMovement.runSpeed * Time.deltaTime);
-
-            // gravity
-            //rb.AddForce(Vector3.down * gravity, ForceMode.Acceleration);
         }
     }
-    //[PunRPC]
-    //public void AnimatorRunOther(bool check)
-    //{
-    //    animator.SetBool("Run", check);
-    //}
-    //[PunRPC]
-    //public void MoveVelocity(Vector3 velocity)
-    //{
-    //    rb.velocity = velocity;
 
-    //}
     public void SetDir(Vector2 direction){
         dir = direction;
         if(dir.x > 0){
@@ -101,11 +89,6 @@ public class PlayerMovement : Player
         }
         timeCount = 0;
     }
-    //[PunRPC]
-    //public void PlayerSetDir(Vector2 direction)
-    //{
-    //    playerMovement.SetDir(direction);
-    //}
     public Vector2 GetDir(){
         return dir;
     }
@@ -126,17 +109,6 @@ public class PlayerMovement : Player
             WallJump();
         }
     }
-    //[PunRPC]
-    //private void JumpOther(float jumpForce)
-    //{
-    //    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-    //}
-    //[PunRPC]
-    //public void AnimatorSetTriggerByName(string type)
-    //{
-    //    animator.SetTrigger(type);
-
-    //}
     public void SetJumpForce(float force){
         jumpForce = force;
     }
@@ -151,6 +123,7 @@ public class PlayerMovement : Player
             isPulling = true;
             pullDir = GetCurrentDir();
         }
+        playerPunCallBack.photonView.RPC("PullOther", RpcTarget.Others);
     }
     // dash
     public void SetDashing(bool dashing){
@@ -166,6 +139,7 @@ public class PlayerMovement : Player
             animator.SetTrigger("Disengage");
             isPulling = false;
         }
+
     }
     // interact
     public void SetInteract(bool toggle){
@@ -196,13 +170,7 @@ public class PlayerMovement : Player
     public void StartCasting(){
         isCasting = true;
     }
-    public void StartCasting2(){
-        isCasting = true;
-    }
     public void EndCasting(){
-        isCasting = false;
-    }
-    public void EndCasting2(){
         isCasting = false;
     }
     public void RightFootSmoke(){

@@ -77,4 +77,14 @@ public class PlayerPunCallBack :Player
     {
         playerSkillController.Dash();
     }
+    [PunRPC]
+    public void PullOther()
+    {
+        playerMovement.Pull();
+    }
+    [PunRPC]
+    public void DisengageOther()
+    {
+        playerMovement.Disengage();
+    }
 }

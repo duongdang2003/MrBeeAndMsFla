@@ -29,7 +29,6 @@ public class PlayerSkillController : Player
             animator.SetTrigger("Dash");
             playerMovement.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "Dash");
             playerUI.DisableDash();
-            playerPunCallBack.photonView.RPC("DisableDashOther", Photon.Pun.RpcTarget.Others);
             playerPunCallBack.photonView.RPC("DashSkillOther", Photon.Pun.RpcTarget.Others);
         }
     }
