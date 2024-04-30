@@ -16,13 +16,13 @@ public class PlayerCollision : Player
         }
     }
     private void OnTriggerEnter(Collider other) {
-        if(other.CompareTag("NoteContent")) {
+        if(other.CompareTag("NoteContent")&& photonView.IsMine) {
             playerUI.DisplayInterractButton();
             playerInteract.SetCurrentObject(other.gameObject);
         }
     }
     private void OnTriggerExit(Collider other) {
-        if(other.CompareTag("NoteContent")) {
+        if(other.CompareTag("NoteContent")&&photonView.IsMine) {
             playerUI.HideInteractButton();
         }
     }
