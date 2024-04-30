@@ -23,6 +23,17 @@ public class PlayerUI : Player
         skills[1] = GameObject.FindGameObjectWithTag("HighJump");
         skills[2] = GameObject.FindGameObjectWithTag("LowGravity");
         noteContent = GameObject.FindGameObjectWithTag("Content");
+        playerPunCallBack.photonView.RPC("SetUIOther", Photon.Pun.RpcTarget.Others);
+    }
+    public void SetUI()
+    {
+        interactButton = GameObject.FindWithTag("InteractButton");
+        interactButton.SetActive(false);
+        noteUI = GameObject.FindWithTag("NoteUI");
+        skills[0] = GameObject.FindGameObjectWithTag("Dash");
+        skills[1] = GameObject.FindGameObjectWithTag("HighJump");
+        skills[2] = GameObject.FindGameObjectWithTag("LowGravity");
+        noteContent = GameObject.FindGameObjectWithTag("Content");
     }
     private void Update() {
         if(dashCoolDownTime < 1){

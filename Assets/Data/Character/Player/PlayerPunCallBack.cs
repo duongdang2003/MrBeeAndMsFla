@@ -87,4 +87,9 @@ public class PlayerPunCallBack :Player
     {
         playerMovement.Disengage();
     }
+    [PunRPC]
+    public void SetUIOther()
+    {
+        playerUI.SetUI();
+    }
 }
