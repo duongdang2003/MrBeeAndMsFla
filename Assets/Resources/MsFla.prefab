@@ -667,6 +667,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68df05e0684ea9c479baeb9081805ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  playerInput: {fileID: 0}
+  playerMovement: {fileID: 0}
+  playerSkillController: {fileID: 0}
+  playerUI: {fileID: 0}
+  playerInteract: {fileID: 0}
+  playerPunCallBack: {fileID: 0}
+  box: {fileID: 0}
+  playerWithTag: []
   runSpeed: 100
   jumpForce: 32
   timeCount: 0
@@ -699,6 +709,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aef208eca41cb742863689b6c5f9de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  playerInput: {fileID: 0}
+  playerMovement: {fileID: 0}
+  playerSkillController: {fileID: 0}
+  playerUI: {fileID: 0}
+  playerInteract: {fileID: 0}
+  playerPunCallBack: {fileID: 0}
+  box: {fileID: 0}
+  playerWithTag: []
 --- !u!114 &429961707424843037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,6 +731,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b462d51abe2424428b0c57b889f9696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  playerInput: {fileID: 0}
+  playerMovement: {fileID: 0}
+  playerSkillController: {fileID: 0}
+  playerUI: {fileID: 0}
+  playerInteract: {fileID: 0}
+  playerPunCallBack: {fileID: 0}
+  box: {fileID: 0}
+  playerWithTag: []
 --- !u!114 &693820183760918644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,6 +753,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12f05750fd4d4843becbb7409a37b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  playerInput: {fileID: 0}
+  playerMovement: {fileID: 0}
+  playerSkillController: {fileID: 0}
+  playerUI: {fileID: 0}
+  playerInteract: {fileID: 0}
+  playerPunCallBack: {fileID: 0}
+  box: {fileID: 0}
+  playerWithTag: []
   dashForce: 8
   dashTime: 0.2
   dashDir: 0
@@ -881,6 +921,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb339d5988cddda46a918b3acfa08ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  playerInput: {fileID: 0}
+  playerMovement: {fileID: 0}
+  playerSkillController: {fileID: 0}
+  playerUI: {fileID: 0}
+  playerInteract: {fileID: 0}
+  playerPunCallBack: {fileID: 0}
+  box: {fileID: 0}
+  playerWithTag: []
   skills:
   - {fileID: 0}
   - {fileID: 0}
@@ -899,6 +949,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af922d45495dcbc4195c99dd5cb172a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  playerInput: {fileID: 0}
+  playerMovement: {fileID: 0}
+  playerSkillController: {fileID: 0}
+  playerUI: {fileID: 0}
+  playerInteract: {fileID: 0}
+  playerPunCallBack: {fileID: 0}
+  box: {fileID: 0}
+  playerWithTag: []
   currentObject: {fileID: 0}
 --- !u!114 &7374652885382870911
 MonoBehaviour:
@@ -920,7 +980,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 1839171556414629951}
-  sceneViewId: 2
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &1839171556414629951
@@ -992,6 +1052,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8602b134aefb147eca95e61d1a4a564e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  playerInput: {fileID: 0}
+  playerMovement: {fileID: 0}
+  playerSkillController: {fileID: 0}
+  playerUI: {fileID: 0}
+  playerInteract: {fileID: 0}
+  playerPunCallBack: {fileID: 0}
+  box: {fileID: 0}
+  playerWithTag: []
 --- !u!1001 &2729367534952936499
 PrefabInstance:
   m_ObjectHideFlags: 0
