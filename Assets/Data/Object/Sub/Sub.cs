@@ -18,9 +18,11 @@ public class Sub : MonoBehaviour
     }
     public void RunSub(){
         RunParagraph(paragraphs[paragrapthIndex]);
+        Debug.Log(paragraphs[paragrapthIndex]);
     }
     private void RunParagraph(string paragraph){
         subDisplay.text = "";
+        introSound.PlayTypingSound();
         StartCoroutine(RunWord(paragraph.Length, paragraph));
     }
     IEnumerator RunWord(int length, string paragraph){
@@ -28,13 +30,15 @@ public class Sub : MonoBehaviour
             paragrapthIndex++;
             if(paragrapthIndex < paragraphs.Length){
                 wordIndex = 0;
+                introSound.StopPlaySound();
                 yield return new WaitForSeconds(1);
                 RunParagraph(paragraphs[paragrapthIndex]);
+            } else {
+                introSound.StopPlaySound();
             }
         } else {
             yield return new WaitForSeconds(0.05f);
             subDisplay.text += paragraph[wordIndex];
-            introSound.PlayKeyBoardSound();
             wordIndex++;
             StartCoroutine(RunWord(length, paragraph));
         }
