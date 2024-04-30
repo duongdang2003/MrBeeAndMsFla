@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.56159216, g: 0.7218083, b: 0.81785756, a: 1}
+  m_IndirectSpecularColor: {r: 0.56158954, g: 0.7218089, b: 0.817857, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -57134,6 +57134,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68df05e0684ea9c479baeb9081805ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  playerInput: {fileID: 0}
+  playerMovement: {fileID: 0}
+  playerSkillController: {fileID: 0}
+  playerUI: {fileID: 0}
+  playerInteract: {fileID: 0}
+  playerPunCallBack: {fileID: 0}
+  box: {fileID: 0}
+  playerWithTag: []
   runSpeed: 100
   jumpForce: 43
   timeCount: 0
@@ -57166,6 +57176,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aef208eca41cb742863689b6c5f9de9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  playerInput: {fileID: 0}
+  playerMovement: {fileID: 0}
+  playerSkillController: {fileID: 0}
+  playerUI: {fileID: 0}
+  playerInteract: {fileID: 0}
+  playerPunCallBack: {fileID: 0}
+  box: {fileID: 0}
+  playerWithTag: []
 --- !u!95 &1335347040
 Animator:
   serializedVersion: 5
@@ -57384,6 +57404,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b462d51abe2424428b0c57b889f9696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  playerInput: {fileID: 0}
+  playerMovement: {fileID: 0}
+  playerSkillController: {fileID: 0}
+  playerUI: {fileID: 0}
+  playerInteract: {fileID: 0}
+  playerPunCallBack: {fileID: 0}
+  box: {fileID: 0}
+  playerWithTag: []
 --- !u!114 &1335347046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57396,6 +57426,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12f05750fd4d4843becbb7409a37b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  playerInput: {fileID: 0}
+  playerMovement: {fileID: 0}
+  playerSkillController: {fileID: 0}
+  playerUI: {fileID: 0}
+  playerInteract: {fileID: 0}
+  playerPunCallBack: {fileID: 0}
+  box: {fileID: 0}
+  playerWithTag: []
   dashForce: 3
   dashTime: 0.2
   dashDir: 0
@@ -85016,8 +85056,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007615142}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0804303, y: -0.7025176, z: 0.080430314, w: 0.7025176}
-  m_LocalPosition: {x: 3.282652, y: 5.6028295, z: 11}
+  m_LocalRotation: {x: 0.08043031, y: -0.70251757, z: 0.08043031, w: 0.7025177}
+  m_LocalPosition: {x: 3.295, y: 4.342, z: 48.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -92571,6 +92611,34 @@ PrefabInstance:
     - target: {fileID: 1974179612027444674, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
       propertyPath: m_Name
       value: MsFla
+      objectReference: {fileID: 0}
+    - target: {fileID: 1974179612027444674, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464365626535053281, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.785903
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464365626535053281, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.9665668
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464365626535053281, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7025177
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464365626535053281, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.08043031
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464365626535053281, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.70251757
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464365626535053281, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.08043031
       objectReference: {fileID: 0}
     - target: {fileID: 7374652885382870911, guid: ea262306b0e3e3643ac530845461ff6b, type: 3}
       propertyPath: sceneViewId
