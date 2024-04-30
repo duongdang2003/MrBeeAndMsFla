@@ -35,15 +35,12 @@ public class PlayerSkillController : Player
     // high jump
     public void HighJump()
     {
-        if (photonView.IsMine)
+        if (playerMovement.IsOnGround() && !playerMovement.IsCasting())
         {
-            if (playerMovement.IsOnGround() && !playerMovement.IsCasting())
-            {
-                animator.SetTrigger("UseOrb");
-                //playerMovement.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "UseOrb");
-                animator.SetFloat("OrbNum", 0);
-                //playerPunCallBack.photonView.RPC("AnimatorSetFloatByName", Photon.Pun.RpcTarget.Others, "OrbNum", 0f);
-            }
+            animator.SetFloat("OrbNum", 0);
+            //playerPunCallBack.photonView.RPC("AnimatorSetFloatByName", Photon.Pun.RpcTarget.Others, "OrbNum", 0f);
+            animator.SetTrigger("UseOrb");
+            //playerMovement.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "UseOrb");
         }
     }
     public void SetHighJump(){
@@ -73,15 +70,12 @@ public class PlayerSkillController : Player
     }
     //low gravity
     public void LowGravity(){
-        if (photonView.IsMine)
+        if (playerMovement.IsOnGround() && !playerMovement.IsCasting())
         {
-            if (playerMovement.IsOnGround() && !playerMovement.IsCasting())
-            {
-                animator.SetTrigger("UseOrb");
-                //playerPunCallBack.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "UseOrb");
-                animator.SetFloat("OrbNum", 1);
-                //playerPunCallBack.photonView.RPC("AnimatorSetFloatByName", Photon.Pun.RpcTarget.Others, "OrbNum", 1f);
-            }
+            animator.SetFloat("OrbNum", 1);
+            //playerPunCallBack.photonView.RPC("AnimatorSetFloatByName", Photon.Pun.RpcTarget.Others, "OrbNum", 1f);
+            animator.SetTrigger("UseOrb");
+            //playerPunCallBack.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "UseOrb");
         }
     }
     public void SetLowGravity(){
