@@ -15,15 +15,16 @@ public class PlayerCollision : Player
 
         }
     }
-
     private void OnTriggerEnter(Collider other) {
-        if(other.CompareTag("NoteContent")) {
+        if(other.CompareTag("Note")) {
             playerUI.DisplayInterractButton();
             playerInteract.SetCurrentObject(other.gameObject);
         }
+        Debug.Log("Test");
+
     }
     private void OnTriggerExit(Collider other) {
-        if(other.CompareTag("NoteContent")) {
+        if(other.CompareTag("Note")) {
             playerUI.HideInteractButton();
         }
     }
