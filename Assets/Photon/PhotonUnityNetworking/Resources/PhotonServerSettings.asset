@@ -54,6 +54,12 @@ MonoBehaviour:
   - SetHighJumpOther
   - SetLowGravityOther
   - UpdateSkillOther
+  - DisengageOther
+  - PullOther
+  - HighJumpPressOther
+  - LowGravityPressOther
+  - SetUIOther
+  - SetUpdatePositionOther
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0
