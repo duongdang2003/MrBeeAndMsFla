@@ -8,10 +8,13 @@ public class PlayerSkillController : Player
     public float dashForce, dashTime, dashDir;
     public float gravityTest;
     private void FixedUpdate() {
-        if(isDashing){
+        if(isDashing)
+        {
             rb.velocity = new Vector3(0, 0, rb.velocity.z + playerMovement.GetCurrentDir() * dashForce);
+            playerPunCallBack.photonView.RPC("MoveVelocity", Photon.Pun.RpcTarget.Others, new Vector3(0, 0, rb.velocity.z + playerMovement.GetCurrentDir() * dashForce));
         } else if(isLowGravity && rb.velocity.y < 0){
             rb.velocity = new Vector3(0, gravityTest, rb.velocity.z);
+            playerPunCallBack.photonView.RPC("MoveVelocity", Photon.Pun.RpcTarget.Others, new Vector3(0, gravityTest, rb.velocity.z));
         }
     }
     // dash
@@ -26,22 +29,24 @@ public class PlayerSkillController : Player
             animator.SetTrigger("Dash");
             playerMovement.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "Dash");
             playerUI.DisableDash();
+            playerPunCallBack.photonView.RPC("DisableDashOther", Photon.Pun.RpcTarget.Others);
+            playerPunCallBack.photonView.RPC("DashSkillOther", Photon.Pun.RpcTarget.Others);
         }
     }
     // high jump
-    public void HighJump(){
+    public void HighJump()
+    {
         if(playerMovement.IsOnGround() && !playerMovement.IsCasting()){
             animator.SetTrigger("UseOrb");
             playerMovement.photonView.RPC("AnimatorSetTriggerByName", Photon.Pun.RpcTarget.Others, "UseOrb");
             animator.SetFloat("OrbNum", 0);
             playerPunCallBack.photonView.RPC("AnimatorSetFloatByName", Photon.Pun.RpcTarget.Others, "OrbNum", 0f);
         }
-
     }
     public void SetHighJump(){
         //isHighJump = !isHighJump;
-        ToggleHighJump(!isHighJump);
-        playerPunCallBack.photonView.RPC("SetHighJumpOther", Photon.Pun.RpcTarget.Others,!isHighJump);
+        ToggleHighJump();
+        playerPunCallBack.photonView.RPC("SetHighJumpOther", Photon.Pun.RpcTarget.Others);
         if(isHighJump){
             playerMovement.SetJumpForce(40);
             playerPunCallBack.photonView.RPC("JumpSkillOther", Photon.Pun.RpcTarget.Others, 40f);
@@ -53,12 +58,15 @@ public class PlayerSkillController : Player
             playerPunCallBack.photonView.RPC("JumpSkillOther", Photon.Pun.RpcTarget.Others, 32f);
             playerUI.UpdateSkill(0);
             playerPunCallBack.photonView.RPC("UpdateSkillOther", Photon.Pun.RpcTarget.Others, 0);
-
         }
     }
-    public void ToggleHighJump(bool check)
+    public void SetBoolHighJump(bool check)
     {
-        isHighJump = check;
+        isLowGravity = check;
+    }
+    public void ToggleHighJump()
+    {
+        isHighJump = !isHighJump;
     }
     //low gravity
     public void LowGravity(){
@@ -70,11 +78,12 @@ public class PlayerSkillController : Player
         }
     }
     public void SetLowGravity(){
-        ToggleLowGravity(!isLowGravity);
-        playerPunCallBack.photonView.RPC("SetLowGravityOther", Photon.Pun.RpcTarget.Others, !isLowGravity);
+        isLowGravity = !isLowGravity;
+        playerPunCallBack.photonView.RPC("SetLowGravityOther", Photon.Pun.RpcTarget.Others);
         if (isLowGravity)
         {
             ResetJump();
+            playerPunCallBack.photonView.RPC("ResetJumpOther", Photon.Pun.RpcTarget.Others);
             playerUI.UpdateSkill(2);
             playerPunCallBack.photonView.RPC("UpdateSkillOther", Photon.Pun.RpcTarget.Others, 2);
         }
@@ -83,9 +92,9 @@ public class PlayerSkillController : Player
             playerPunCallBack.photonView.RPC("UpdateSkillOther", Photon.Pun.RpcTarget.Others, 0);
         }
     }
-    public void ToggleLowGravity(bool check)
+    public void ToggleLowGravity()
     {
-        isLowGravity = check;
+        isLowGravity = !isLowGravity;
     }
     IEnumerator StopDashing(){
         yield return new WaitForSeconds(dashTime);

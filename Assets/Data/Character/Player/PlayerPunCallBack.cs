@@ -40,11 +40,12 @@ public class PlayerPunCallBack :Player
     public void JumpSkillOther(float heigh)
     {
         playerMovement.SetJumpForce(heigh);
+        playerSkillController.SetBoolHighJump(false);
     }
     [PunRPC]
-    public void SetHighJumpOther(bool check)
+    public void SetHighJumpOther()
     {
-        playerSkillController.ToggleHighJump(check);
+        playerSkillController.ToggleHighJump();
     }
     [PunRPC]
     public void UpdateSkillOther(int activeSkill)
@@ -52,14 +53,28 @@ public class PlayerPunCallBack :Player
         playerUI.UpdateSkill(activeSkill);
     }
     [PunRPC]
-    public void SetLowGravityOther(bool check)
+    public void SetLowGravityOther()
     {
-        playerSkillController.ToggleLowGravity(check);
+        playerSkillController.ToggleLowGravity();
     }
     [PunRPC]
     public void AnimatorSetFloatByName(string type, float value)
     {
         animator.SetFloat(type, value);
-
+    }
+    [PunRPC]
+    public void ResetJumpOther()
+    {
+        playerSkillController.ResetJump();
+    }
+    [PunRPC]
+    public void DisableDashOther()
+    {
+        playerUI.DisableDash();
+    }
+    [PunRPC]
+    public void DashSkillOther()
+    {
+        playerSkillController.Dash();
     }
 }
