@@ -31,9 +31,6 @@ public class Player : MonoBehaviourPunCallbacks
         playerUI = GetComponent<PlayerUI>();
         playerInteract = GetComponent<PlayerInteract>();
         playerPunCallBack = GetComponent<PlayerPunCallBack>();
-    }
-    private void Start()
-    {
         playerWithTag = GameObject.FindGameObjectsWithTag("Player");
     }
 }
