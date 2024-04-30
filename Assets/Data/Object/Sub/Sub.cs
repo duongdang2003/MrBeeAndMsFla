@@ -18,6 +18,7 @@ public class Sub : MonoBehaviour
     }
     public void RunSub(){
         RunParagraph(paragraphs[paragrapthIndex]);
+        Debug.Log(paragraphs[paragrapthIndex]);
     }
     private void RunParagraph(string paragraph){
         subDisplay.text = "";
