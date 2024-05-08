@@ -15,6 +15,10 @@ TagManager:
   - LowGravity
   - Content
   - Spike
+  - BeeAnchor
+  - FlaAnchor
+  - BeeName
+  - FlaName
   layers:
   - Default
   - TransparentFX

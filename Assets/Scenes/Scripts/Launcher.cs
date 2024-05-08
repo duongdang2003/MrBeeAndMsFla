@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
@@ -36,11 +37,19 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     [SerializeField] GameObject startButton;
     [SerializeField] GameObject readyButton;
+    [SerializeField] GameObject swapButton;
     public RoomButton roomButton;
     private List<RoomButton> allRoomButtons = new List<RoomButton>();
     private List<TMP_Text> allPlayerNames = new List<TMP_Text>();
     private Dictionary<string, RoomInfo> cachedRoomList = new Dictionary<string, RoomInfo>();
     private List<RoomInfo> roomsActive;
+
+    [Header("CharacterModel")]
+    [SerializeField] GameObject[] characterModels;
+
+    // [Header("CharacterName")]
+    // [SerializeField] RectTransform[] characterNames;
+
 
     [Header("StarGame")]
 
@@ -106,6 +115,7 @@ public class Launcher : MonoBehaviourPunCallbacks
             room.MaxPlayers = 2;
             PhotonNetwork.CreateRoom(roomNameInput.text, room);
             roomNameInput.text = "";
+            ActiveCharacter(0);
         }
     }
     public override void OnJoinedRoom()
@@ -148,6 +158,9 @@ public class Launcher : MonoBehaviourPunCallbacks
         PhotonNetwork.LeaveRoom();
         CloseMenu();
         loadingPanel.SetActive(true);
+        HideCharacter(0);
+        HideCharacter(1);
+        EnableSwapButton(false);
 
     }
     public override void OnLeftRoom()
@@ -244,10 +257,14 @@ public class Launcher : MonoBehaviourPunCallbacks
         {
             hasReady = newPlayerLabel.transform.Find("hasReady").GetComponent<Image>().gameObject;
         }
+        ActiveCharacter(1);
+        EnableSwapButton(true);
     }
     public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
     {
         ListAllPlayer();
+        HideCharacter(1);
+        EnableSwapButton(false);
     }
     public override void OnCreateRoomFailed(short returnCode, string message)
     {
@@ -274,7 +291,6 @@ public class Launcher : MonoBehaviourPunCallbacks
         bool allPlayersReady = true;
         foreach (Photon.Realtime.Player player in players)
         {
-            Debug.Log("ngu");
             if (player.ActorNumber != PhotonNetwork.MasterClient.ActorNumber)
             {
                 if (!player.CustomProperties.ContainsKey("IsReady") || !(bool)player.CustomProperties["IsReady"])
@@ -300,6 +316,20 @@ public class Launcher : MonoBehaviourPunCallbacks
             Debug.Log(State);
             startButton.SetActive(State);
         }
+    }
+    private void ActiveCharacter(int index){
+        characterModels[index].SetActive(true);
+    }
+    private void HideCharacter(int index){
+        characterModels[index].SetActive(false);
+    }
+    private void EnableSwapButton(bool toogle){
+        swapButton.SetActive(toogle);
+    }
+    private void SwapCharacter(){
+        Vector3 temp = characterModels[0].transform.position;
+        characterModels[0].transform.position = characterModels[1].transform.position;
+        characterModels[1].transform.position = temp;
     }
     public void StartGame()
     {
