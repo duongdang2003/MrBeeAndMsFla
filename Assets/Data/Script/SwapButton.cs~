@@ -1,0 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SwapButton : MonoBehaviour
+{
+    public GameObject bee, fla;
+    public RectTransform beeName, flaName;
+    private void Awake() {
+        // bee = GameObject.FindWithTag("BeeAnchor");
+        // fla = GameObject.FindWithTag("FlaAnchor");
+        beeName = GameObject.FindWithTag("BeeName").GetComponent<RectTransform>();
+        flaName = GameObject.FindWithTag("FlaName").GetComponent<RectTransform>();
+    }
+}

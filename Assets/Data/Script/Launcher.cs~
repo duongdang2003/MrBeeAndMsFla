@@ -43,10 +43,9 @@ public class Launcher : MonoBehaviourPunCallbacks
     private List<TMP_Text> allPlayerNames = new List<TMP_Text>();
     private Dictionary<string, RoomInfo> cachedRoomList = new Dictionary<string, RoomInfo>();
     private List<RoomInfo> roomsActive;
-
     [Header("CharacterModel")]
     [SerializeField] GameObject[] characterModels;
-
+    [SerializeField] GameObject[] uiLocationCharacter;
     // [Header("CharacterName")]
     // [SerializeField] RectTransform[] characterNames;
 
@@ -133,7 +132,9 @@ public class Launcher : MonoBehaviourPunCallbacks
         {
             readyButton.SetActive(false);
             startButton.SetActive(false);
-
+            ActiveCharacter(0);
+            ActiveCharacter(1);
+            EnableSwapButton(true);
         }
     }
     public override void OnMasterClientSwitched(Photon.Realtime.Player newMasterClient)
@@ -257,14 +258,10 @@ public class Launcher : MonoBehaviourPunCallbacks
         {
             hasReady = newPlayerLabel.transform.Find("hasReady").GetComponent<Image>().gameObject;
         }
-        ActiveCharacter(1);
-        EnableSwapButton(true);
     }
     public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
     {
         ListAllPlayer();
-        HideCharacter(1);
-        EnableSwapButton(false);
     }
     public override void OnCreateRoomFailed(short returnCode, string message)
     {
