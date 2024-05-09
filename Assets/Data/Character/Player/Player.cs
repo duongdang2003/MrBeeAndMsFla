@@ -15,6 +15,7 @@ public class Player : MonoBehaviourPunCallbacks
     public PlayerSkillController playerSkillController;
     public PlayerUI playerUI;
     public PlayerInteract playerInteract;
+    public PlayerSound playerSound;
     public PlayerPunCallBack playerPunCallBack;
     // object
     public GameObject box;
@@ -31,5 +32,6 @@ public class Player : MonoBehaviourPunCallbacks
         playerUI = GetComponent<PlayerUI>();
         playerInteract = GetComponent<PlayerInteract>();
         playerPunCallBack = GetComponent<PlayerPunCallBack>();
+        playerSound = GetComponent<PlayerSound>();
     }
 }

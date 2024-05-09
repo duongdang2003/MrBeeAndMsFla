@@ -23,6 +23,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     [SerializeField] GameObject createRoomPanel;
     [SerializeField] GameObject findRoomPanel;
     [SerializeField] GameObject roomPanel;
+    [SerializeField] GameObject loadingOrb;
 
     [Header("Text")]
 
@@ -58,10 +59,16 @@ public class Launcher : MonoBehaviourPunCallbacks
     private bool isReady = false;
     [SerializeField] string Map;
     //private List<User> users = new List<User>();
+
+    [Header("Cursor Sprite")]
+    [SerializeField] Texture2D cursorSprite;
+
     void Start()
     {
+        Cursor.SetCursor(cursorSprite, Vector2.zero, CursorMode.Auto);
         CloseMenu();
         loadingPanel.SetActive(true);
+        loadingOrb.SetActive(true);
         PhotonNetwork.ConnectUsingSettings();
         //PhotonNetwork.JoinLobby();
         PhotonNetwork.AddCallbackTarget(this);
@@ -85,6 +92,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         menuPanel.SetActive(false);
         loadingPanel.SetActive(false);
+        loadingOrb.SetActive(false);
         roomPanel.SetActive(false);
         createRoomPanel.SetActive(false);
         roomPanel.SetActive(false);
@@ -111,6 +119,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         {
             CloseMenu();
             loadingPanel.SetActive(true);
+            loadingOrb.SetActive(true);
             RoomOptions room = new RoomOptions();
             room.MaxPlayers = 2;
             PhotonNetwork.CreateRoom(roomNameInput.text, room);
@@ -158,6 +167,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         PhotonNetwork.LeaveRoom();
         CloseMenu();
         loadingPanel.SetActive(true);
+        loadingOrb.SetActive(true);
         HideCharacter(0);
         HideCharacter(1);
         EnableSwapButton(false);
@@ -225,6 +235,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRoom(room.Name);
         CloseMenu();
         loadingPanel.SetActive(true);
+        loadingOrb.SetActive(true);
     }
     private void ListAllPlayer()
     {
@@ -320,7 +331,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     private void ActiveCharacter(int index){
         characterModels[index].SetActive(true);
     }
-    private void HideCharacter(int index){
+    private void HideCharacter(int index){  
         characterModels[index].SetActive(false);
     }
     private void EnableSwapButton(bool toogle){

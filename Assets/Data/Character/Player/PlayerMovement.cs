@@ -164,6 +164,7 @@ public class PlayerMovement : Player
         if(!IsOnGround()){
             // animator.SetTrigger("DashToJump");
             animator.SetBool("DashToJump", true);
+            playerSound.PlayDash();
             setJumping();
             // StartCoroutine(ClearTrigger());
             } else {
