@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using TMPro;
 using UnityEngine;
 public class SwapButton : MonoBehaviourPunCallbacks
 {
     public GameObject bee, fla;
-    public RectTransform beeName, flaName;
+    public TMP_Text beeName, flaName;
     private Vector3 locationCharacterLeft;
     private Vector3 locationCharacterRight;
     private Vector3 locationNameLeft;
@@ -15,8 +16,6 @@ public class SwapButton : MonoBehaviourPunCallbacks
         // fla = GameObject.FindWithTag("FlaAnchor");
         locationCharacterLeft = bee.transform.position;
         locationCharacterRight = fla.transform.position;
-        beeName = GameObject.FindWithTag("BeeName").GetComponent<RectTransform>();
-        flaName = GameObject.FindWithTag("FlaName").GetComponent<RectTransform>();
         locationNameLeft = beeName.transform.position;
         locationNameRight = flaName.transform.position;
     }
@@ -28,14 +27,14 @@ public class SwapButton : MonoBehaviourPunCallbacks
             bee.transform.position = locationCharacterRight;
             beeName.transform.position = locationNameRight;
             fla.transform.position = locationCharacterLeft;
-            flaName.transform.position = locationCharacterLeft;
+            flaName.transform.position = locationNameLeft;
         }
         else
         {
             bee.transform.position = locationCharacterLeft;
             beeName.transform.position = locationNameLeft;
             fla.transform.position = locationCharacterRight;
-            flaName.transform.position = locationCharacterRight;
+            flaName.transform.position = locationNameRight;
         }
         //bee.transform.position = fla.transform.position;
         //fla.transform.position = beePos;
@@ -50,9 +49,9 @@ public class SwapButton : MonoBehaviourPunCallbacks
     }
     public void SetBeginRoom()
     {
-        bee.transform.position = locationCharacterLeft;
-        beeName.position = locationNameLeft;
-        fla.transform.position = locationCharacterRight;
-        flaName.position = locationCharacterRight;
+        //bee.transform.position = locationCharacterLeft;
+        //beeName.position = locationNameLeft;
+        //fla.transform.position = locationCharacterRight;
+        //flaName.position = locationCharacterRight;
     }
 }
