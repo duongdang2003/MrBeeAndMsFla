@@ -56,6 +56,7 @@ public class SwapButton : MonoBehaviourPunCallbacks
             beeName.transform.position = locationNameRight;
             fla.transform.position = locationCharacterLeft;
             flaName.transform.position = locationNameLeft;
+            checkBeeLeft = false;
         }
         else
         {
@@ -63,6 +64,7 @@ public class SwapButton : MonoBehaviourPunCallbacks
             beeName.transform.position = locationNameLeft;
             fla.transform.position = locationCharacterRight;
             flaName.transform.position = locationNameRight;
+            checkBeeLeft = true;
         }
     }
     public void SetBeginRoom()
@@ -71,5 +73,13 @@ public class SwapButton : MonoBehaviourPunCallbacks
         //beeName.position = locationNameLeft;
         //fla.transform.position = locationCharacterRight;
         //flaName.position = locationCharacterRight;
+    }
+    public void SetDefaultLocation()
+    {
+        bee.transform.position = locationCharacterLeft;
+        beeName.transform.position = locationNameLeft;
+        fla.transform.position = locationCharacterRight;
+        flaName.transform.position = locationNameRight;
+        checkBeeLeft = true;
     }
 }
