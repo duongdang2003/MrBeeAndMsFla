@@ -25,14 +25,10 @@ public class SpwanPlayer : MonoBehaviour
     {
         string playerName = PhotonNetwork.LocalPlayer.NickName;
         GameObject player;
-        if (PhotonNetwork.IsMasterClient)
-        {
-            player = PhotonNetwork.Instantiate(this.playerPrefab1.name, StartPosition.position, StartPosition.rotation);
-        }
-        else
-        {
-            player = PhotonNetwork.Instantiate(playerPrefab2.name, StartPosition.position, StartPosition.rotation);
-        }
+
+        player = PhotonNetwork.IsMasterClient ? 
+        PhotonNetwork.Instantiate(this.playerPrefab1.name, StartPosition.position, StartPosition.rotation) :
+        PhotonNetwork.Instantiate(this.playerPrefab2.name, StartPosition.position, StartPosition.rotation);
 
     }
 }
