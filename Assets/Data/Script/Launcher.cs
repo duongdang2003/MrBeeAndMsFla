@@ -150,7 +150,7 @@ public class Launcher : MonoBehaviourPunCallbacks
             ActiveCharacter(1);
             EnableSwapButton(true);
             swap.SetBeginRoom();
-            swap.photonView.RPC("SetSwapOther", RpcTarget.Others);
+            swap.photonView.RPC("SetFirstSwap", RpcTarget.Others);
         }
     }
 
