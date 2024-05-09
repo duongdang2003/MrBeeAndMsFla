@@ -126,7 +126,6 @@ public class Launcher : MonoBehaviourPunCallbacks
             room.MaxPlayers = 2;
             PhotonNetwork.CreateRoom(roomNameInput.text, room);
             roomNameInput.text = "";
-            ActiveCharacter(0);
         }
     }
     public override void OnJoinedRoom()
@@ -135,10 +134,21 @@ public class Launcher : MonoBehaviourPunCallbacks
         roomPanel.SetActive(true);
         roomName.SetText(PhotonNetwork.CurrentRoom.Name);
         ListAllPlayer();
+        SetMaterClientForRoom();
+    }
+    public override void OnMasterClientSwitched(Photon.Realtime.Player newMasterClient)
+    {
+        SetMaterClientForRoom();
+    }
+    private void SetMaterClientForRoom()
+    {
         if (!PhotonNetwork.IsMasterClient)
         {
             readyButton.SetActive(true);
             startButton.SetActive(false);
+            ActiveCharacter(0);
+            ActiveCharacter(1);
+            EnableSwapButton(false);
         }
         else
         {
@@ -148,20 +158,10 @@ public class Launcher : MonoBehaviourPunCallbacks
             ActiveCharacter(1);
             EnableSwapButton(true);
             swap.SetBeginRoom();
+            swap.photonView.RPC("SetSwapOther", RpcTarget.Others);
         }
     }
-    public override void OnMasterClientSwitched(Photon.Realtime.Player newMasterClient)
-    {
-        if (!PhotonNetwork.IsMasterClient)
-        {
-            readyButton.SetActive(true);
-            startButton.SetActive(false);
-        }
-        else
-        {
-            readyButton.SetActive(false);
-        }
-    }
+
     public void ExitToMainMenu()
     {
         CloseMenu();
@@ -260,6 +260,10 @@ public class Launcher : MonoBehaviourPunCallbacks
             {
                 hasReady = newPlayer.transform.Find("hasReady").GetComponent<Image>().gameObject;
             }
+            else
+            {
+                SetMaterClientForRoom();
+            }
         }
     }
     public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
@@ -272,6 +276,10 @@ public class Launcher : MonoBehaviourPunCallbacks
         if (!newPlayer.IsMasterClient)
         {
             hasReady = newPlayerLabel.transform.Find("hasReady").GetComponent<Image>().gameObject;
+        }
+        else
+        {
+            swap.photonView.RPC("SetSwapOther", RpcTarget.Others);
         }
     }
     public override void OnPlayerLeftRoom(Photon.Realtime.Player otherPlayer)
