@@ -67,6 +67,24 @@ public class SwapButton : MonoBehaviourPunCallbacks
             checkBeeLeft = true;
         }
     }
+    [PunRPC]
+    public void SetFirstSwap()
+    {
+        if (!checkBeeLeft)
+        {
+            bee.transform.position = locationCharacterRight;
+            beeName.transform.position = locationNameRight;
+            fla.transform.position = locationCharacterLeft;
+            flaName.transform.position = locationNameLeft;
+        }
+        else
+        {
+            bee.transform.position = locationCharacterLeft;
+            beeName.transform.position = locationNameLeft;
+            fla.transform.position = locationCharacterRight;
+            flaName.transform.position = locationNameRight;
+        }
+    }
     public void SetBeginRoom()
     {
         //bee.transform.position = locationCharacterLeft;
