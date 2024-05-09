@@ -70,6 +70,7 @@ public class SwapButton : MonoBehaviourPunCallbacks
     [PunRPC]
     public void SetFirstSwap()
     {
+        Debug.Log("Ngug vcl dsamdams");
         if (!checkBeeLeft)
         {
             bee.transform.position = locationCharacterRight;
