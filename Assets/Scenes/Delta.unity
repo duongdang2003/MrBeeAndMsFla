@@ -29869,6 +29869,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2e5aee6a64245b4eb6a19ae4b96fffe, type: 3}
   m_PrefabInstance: {fileID: 742528427}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &744371520
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3133485029954542894, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3133485029954542894, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.5895
+      objectReference: {fileID: 0}
+    - target: {fileID: 3133485029954542894, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 3133485029954542894, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3133485029954542894, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3133485029954542894, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3133485029954542894, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3133485029954542894, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3133485029954542894, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3133485029954542894, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032762090645795437, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
+      propertyPath: m_Name
+      value: Glub
+      objectReference: {fileID: 0}
+    - target: {fileID: 9167651622033220572, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 9167651622033220572, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1461382
+      objectReference: {fileID: 0}
+    - target: {fileID: 9167651622033220572, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
+      propertyPath: m_Size.z
+      value: 0.9999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 9167651622033220572, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
+      propertyPath: m_Center.y
+      value: 0.38618657
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ba714ac1c0446b4788430c8f4337aed, type: 3}
 --- !u!1001 &744885676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57212,6 +57285,7 @@ MonoBehaviour:
   playerSkillController: {fileID: 0}
   playerUI: {fileID: 0}
   playerInteract: {fileID: 0}
+  playerSound: {fileID: 0}
   playerPunCallBack: {fileID: 0}
   box: {fileID: 0}
   playerWithTag: []
@@ -57254,6 +57328,7 @@ MonoBehaviour:
   playerSkillController: {fileID: 0}
   playerUI: {fileID: 0}
   playerInteract: {fileID: 0}
+  playerSound: {fileID: 0}
   playerPunCallBack: {fileID: 0}
   box: {fileID: 0}
   playerWithTag: []
@@ -57482,6 +57557,7 @@ MonoBehaviour:
   playerSkillController: {fileID: 0}
   playerUI: {fileID: 0}
   playerInteract: {fileID: 0}
+  playerSound: {fileID: 0}
   playerPunCallBack: {fileID: 0}
   box: {fileID: 0}
   playerWithTag: []
@@ -57504,6 +57580,7 @@ MonoBehaviour:
   playerSkillController: {fileID: 0}
   playerUI: {fileID: 0}
   playerInteract: {fileID: 0}
+  playerSound: {fileID: 0}
   playerPunCallBack: {fileID: 0}
   box: {fileID: 0}
   playerWithTag: []
@@ -92818,3 +92895,4 @@ SceneRoots:
   - {fileID: 1779615195}
   - {fileID: 550006268}
   - {fileID: 1104700184}
+  - {fileID: 744371520}

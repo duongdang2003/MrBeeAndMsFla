@@ -38,5 +38,7 @@ public class Slime : Enemy
     public override void Death(){
         base.Death();
         isDeath = true;
+        rb.isKinematic = true;
+        GetComponent<BoxCollider>().enabled = false;
     }
 }
