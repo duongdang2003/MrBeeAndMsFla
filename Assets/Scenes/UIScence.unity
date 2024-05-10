@@ -3367,7 +3367,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: FIND ROOM
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 510601f01109e9244aa98eac485f09de, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9cc25151cb8b641daba6dc0c17b23633, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: 510601f01109e9244aa98eac485f09de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3431,7 +3431,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 30.381592, z: 0, w: 22.662659}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &402118059
@@ -11729,8 +11729,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: MS FLA
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 510601f01109e9244aa98eac485f09de, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: 510601f01109e9244aa98eac485f09de, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9cc25151cb8b641daba6dc0c17b23633, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: 9cc25151cb8b641daba6dc0c17b23633, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14510,8 +14510,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: MR BEE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 510601f01109e9244aa98eac485f09de, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: 510601f01109e9244aa98eac485f09de, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9cc25151cb8b641daba6dc0c17b23633, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: 9cc25151cb8b641daba6dc0c17b23633, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15506,7 +15506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1635304239
 RectTransform:
   m_ObjectHideFlags: 0

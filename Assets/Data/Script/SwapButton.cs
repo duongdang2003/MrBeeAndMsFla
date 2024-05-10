@@ -11,7 +11,7 @@ public class SwapButton : MonoBehaviourPunCallbacks
     public GameObject locationCharacterRight;
     public GameObject locationNameLeft;
     public GameObject locationNameRight;
-    private bool checkBeeLeft = true;
+    public bool checkBeeLeft = true;
     private void Awake() {
         //// bee = GameObject.FindWithTag("BeeAnchor");
         //// fla = GameObject.FindWithTag("FlaAnchor");
@@ -75,6 +75,7 @@ public class SwapButton : MonoBehaviourPunCallbacks
             beeName.transform.position = locationNameRight.transform.position;
             fla.transform.position = locationCharacterLeft.transform.position;
             flaName.transform.position = locationNameLeft.transform.position;
+            checkBeeLeft = true;
         }
         else
         {
@@ -82,6 +83,7 @@ public class SwapButton : MonoBehaviourPunCallbacks
             beeName.transform.position = locationNameLeft.transform.position;
             fla.transform.position = locationCharacterRight.transform.position;
             flaName.transform.position = locationNameRight.transform.position;
+            checkBeeLeft = false;
         }
     }
     //public void SetBeginRoom()

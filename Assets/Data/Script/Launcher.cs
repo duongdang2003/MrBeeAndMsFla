@@ -50,8 +50,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     [SerializeField] GameObject[] uiLocationCharacter;
     // [Header("CharacterName")]
     // [SerializeField] RectTransform[] characterNames;
-    [Header("MenuObject")]
-    [SerializeField] GameObject menuObj;
+
 
     [Header("StarGame")]
 
@@ -92,7 +91,6 @@ public class Launcher : MonoBehaviourPunCallbacks
         createRoomPanel.SetActive(false);
         roomPanel.SetActive(false);
         findRoomPanel.SetActive(false);
-        // menuObj.SetActive(false);
     }
     public override void OnConnectedToMaster()
     {
@@ -260,7 +258,6 @@ public class Launcher : MonoBehaviourPunCallbacks
     }
     public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
     {
-
         TMP_Text newPlayerLabel = Instantiate(playerName, playerJoinRoom);
         newPlayerLabel.text = newPlayer.NickName;
         newPlayerLabel.gameObject.SetActive(true);
