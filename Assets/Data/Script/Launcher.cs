@@ -267,7 +267,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         {
             hasReady = newPlayerLabel.transform.Find("hasReady").GetComponent<Image>().gameObject;
         }
-        else
+        else if(PhotonNetwork.IsMasterClient)
         {
             SetMaterClientForRoom();
         }
