@@ -2949,7 +2949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &383040816
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3367,7 +3367,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: FIND ROOM
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9cc25151cb8b641daba6dc0c17b23633, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 510601f01109e9244aa98eac485f09de, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: 510601f01109e9244aa98eac485f09de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10594,8 +10594,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0016937, y: -106}
-  m_SizeDelta: {x: 972.99, y: 686.18}
+  m_AnchoredPosition: {x: 0.0016937, y: -85.53906}
+  m_SizeDelta: {x: 972.99, y: 727.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1166675921
 MonoBehaviour:
@@ -14318,7 +14318,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1527934932}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9999942
+  m_Size: 0.9999943
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14396,9 +14396,9 @@ RectTransform:
   m_Father: {fileID: 1166675920}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1450562005
 MonoBehaviour:
@@ -14923,8 +14923,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1217899033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.0000057816505}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16097,7 +16097,6 @@ MonoBehaviour:
   uiLocationCharacter:
   - {fileID: 987331853}
   - {fileID: 48779403}
-  menuObj: {fileID: 1120303959}
   User: {fileID: 0}
   Map: Delta
 --- !u!114 &1693683239
@@ -17364,8 +17363,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0014953613, y: -0.0025634766}
-  m_SizeDelta: {x: 0, y: 10}
+  m_AnchoredPosition: {x: -0.000030517578, y: -0.0015869141}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1801517476
 MonoBehaviour:
@@ -18233,6 +18232,7 @@ MonoBehaviour:
   locationCharacterRight: {fileID: 48779403}
   locationNameLeft: {fileID: 755695746}
   locationNameRight: {fileID: 2025464377}
+  checkBeeLeft: 1
 --- !u!114 &1860824604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19843,7 +19843,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 368}
+  m_AnchoredPosition: {x: 0, y: 402}
   m_SizeDelta: {x: 700, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2075558687
