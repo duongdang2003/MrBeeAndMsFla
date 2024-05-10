@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -48,10 +49,12 @@ public class PlayerInput : Player
             if (context.performed && isListeningInput)
             {
                 playerMovement.Pull();
+                playerPunCallBack.photonView.RPC("PullOther", RpcTarget.Others);
             }
             else if (context.canceled)
             {
                 playerMovement.Disengage();
+                playerPunCallBack.photonView.RPC("DisengageOther", RpcTarget.Others);
             }
         }
     }

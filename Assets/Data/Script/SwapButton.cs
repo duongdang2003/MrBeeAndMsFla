@@ -7,36 +7,34 @@ public class SwapButton : MonoBehaviourPunCallbacks
 {
     public GameObject bee, fla;
     public TMP_Text beeName, flaName;
-    private Vector3 locationCharacterLeft;
-    private Vector3 locationCharacterRight;
-    private Vector3 locationNameLeft;
-    private Vector3 locationNameRight;
-    private bool checkBeeLeft = true;
+    public GameObject locationCharacterLeft;
+    public GameObject locationCharacterRight;
+    public GameObject locationNameLeft;
+    public GameObject locationNameRight;
+    public bool checkBeeLeft = true;
     private void Awake() {
-        // bee = GameObject.FindWithTag("BeeAnchor");
-        // fla = GameObject.FindWithTag("FlaAnchor");
-        locationCharacterLeft = bee.transform.position;
-        locationCharacterRight = fla.transform.position;
-        locationNameLeft = beeName.transform.position;
-        locationNameRight = flaName.transform.position;
+        //// bee = GameObject.FindWithTag("BeeAnchor");
+        //// fla = GameObject.FindWithTag("FlaAnchor");
+        //locationNameLeft = beeName.transform.position;
+        //locationNameRight = flaName.transform.position;
     }
     public void Swap(){
         // swap model
         //Vector3 beePos = bee.transform.position;
-        if (locationCharacterLeft == bee.transform.position)
+        if (locationCharacterLeft.transform.position == bee.transform.position)
         {
-            bee.transform.position = locationCharacterRight;
-            beeName.transform.position = locationNameRight;
-            fla.transform.position = locationCharacterLeft;
-            flaName.transform.position = locationNameLeft;
+            bee.transform.position = locationCharacterRight.transform.position;
+            beeName.transform.position = locationNameRight.transform.position;
+            fla.transform.position = locationCharacterLeft.transform.position;
+            flaName.transform.position = locationNameLeft.transform.position;
             checkBeeLeft = false;
         }
         else
         {
-            bee.transform.position = locationCharacterLeft;
-            beeName.transform.position = locationNameLeft;
-            fla.transform.position = locationCharacterRight;
-            flaName.transform.position = locationNameRight;
+            bee.transform.position = locationCharacterLeft.transform.position;
+            beeName.transform.position = locationNameLeft.transform.position;
+            fla.transform.position = locationCharacterRight.transform.position;
+            flaName.transform.position = locationNameRight.transform.position;
             checkBeeLeft = true;
         }
         //bee.transform.position = fla.transform.position;
@@ -52,18 +50,18 @@ public class SwapButton : MonoBehaviourPunCallbacks
     {
         if (checkBeeLeft)
         {
-            bee.transform.position = locationCharacterRight;
-            beeName.transform.position = locationNameRight;
-            fla.transform.position = locationCharacterLeft;
-            flaName.transform.position = locationNameLeft;
+            bee.transform.position = locationCharacterRight.transform.position;
+            beeName.transform.position = locationNameRight.transform.position;
+            fla.transform.position = locationCharacterLeft.transform.position;
+            flaName.transform.position = locationNameLeft.transform.position;
             checkBeeLeft = false;
         }
         else
         {
-            bee.transform.position = locationCharacterLeft;
-            beeName.transform.position = locationNameLeft;
-            fla.transform.position = locationCharacterRight;
-            flaName.transform.position = locationNameRight;
+            bee.transform.position = locationCharacterLeft.transform.position;
+            beeName.transform.position = locationNameLeft.transform.position;
+            fla.transform.position = locationCharacterRight.transform.position;
+            flaName.transform.position = locationNameRight.transform.position;
             checkBeeLeft = true;
         }
     }
@@ -73,17 +71,19 @@ public class SwapButton : MonoBehaviourPunCallbacks
         Debug.Log("Ngug vcl dsamdams");
         if (!checkBeeLeft)
         {
-            bee.transform.position = locationCharacterRight;
-            beeName.transform.position = locationNameRight;
-            fla.transform.position = locationCharacterLeft;
-            flaName.transform.position = locationNameLeft;
+            bee.transform.position = locationCharacterRight.transform.position;
+            beeName.transform.position = locationNameRight.transform.position;
+            fla.transform.position = locationCharacterLeft.transform.position;
+            flaName.transform.position = locationNameLeft.transform.position;
+            checkBeeLeft = true;
         }
         else
         {
-            bee.transform.position = locationCharacterLeft;
-            beeName.transform.position = locationNameLeft;
-            fla.transform.position = locationCharacterRight;
-            flaName.transform.position = locationNameRight;
+            bee.transform.position = locationCharacterLeft.transform.position;
+            beeName.transform.position = locationNameLeft.transform.position;
+            fla.transform.position = locationCharacterRight.transform.position;
+            flaName.transform.position = locationNameRight.transform.position;
+            checkBeeLeft = false;
         }
     }
     //public void SetBeginRoom()
@@ -95,10 +95,10 @@ public class SwapButton : MonoBehaviourPunCallbacks
     //}
     public void SetDefaultLocation()
     {
-        bee.transform.position = locationCharacterLeft;
-        beeName.transform.position = locationNameLeft;
-        fla.transform.position = locationCharacterRight;
-        flaName.transform.position = locationNameRight;
+        bee.transform.position = locationCharacterLeft.transform.position;
+        beeName.transform.position = locationNameLeft.transform.position;
+        fla.transform.position = locationCharacterRight.transform.position;
+        flaName.transform.position = locationNameRight.transform.position;
         checkBeeLeft = true;
     }
 }

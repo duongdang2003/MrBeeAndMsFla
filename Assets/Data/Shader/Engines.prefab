@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5832087775144589628}
   - component: {fileID: 1465071900419682830}
   - component: {fileID: 4597652337724114797}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Engines (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 23520676680407559}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.005, y: 0.01, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.3, z: 0.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.46, y: 0.92767984, z: 0.61845315}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2298447126837944283}
@@ -4841,34 +4841,29 @@ GameObject:
   - component: {fileID: 2298447126837944283}
   - component: {fileID: 3994325160295941398}
   - component: {fileID: 4234521744162112531}
-  - component: {fileID: 3378162232010793803}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Engines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &2298447126837944283
-RectTransform:
+--- !u!4 &2298447126837944283
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3102350007413898114}
-  m_LocalRotation: {x: 0.16974334, y: -0.9739556, z: -0.082816504, w: 0.12545595}
-  m_LocalPosition: {x: 0, y: 0, z: -4.172209}
-  m_LocalScale: {x: 0.0015555337, y: 0.0020740454, z: 0.0015555335}
-  m_ConstrainProportionsScale: 0
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.002189856, y: 0.00014784047, z: 0.002976578}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5832087775144589628}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 36.015, y: -93.203, z: 89.644}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.333937, y: -29.900152}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &3994325160295941398
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -9694,15 +9689,3 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &3378162232010793803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3102350007413898114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7a63be2797584fc28992ad9aab1cece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

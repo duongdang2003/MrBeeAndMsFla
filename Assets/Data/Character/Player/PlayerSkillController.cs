@@ -79,18 +79,15 @@ public class PlayerSkillController : Player
         }
     }
     public void SetLowGravity(){
-        isLowGravity = !isLowGravity;
-        //playerPunCallBack.photonView.RPC("SetLowGravityOther", Photon.Pun.RpcTarget.Others);
+        ToggleLowGravity();
         if (isLowGravity)
         {
             ResetJump();
-            //playerPunCallBack.photonView.RPC("ResetJumpOther", Photon.Pun.RpcTarget.Others);
             playerUI.UpdateSkill(2);
-            //playerPunCallBack.photonView.RPC("UpdateSkillOther", Photon.Pun.RpcTarget.Others, 2);
         }
-        else {
+        else
+        {
             playerUI.UpdateSkill(0);
-            //playerPunCallBack.photonView.RPC("UpdateSkillOther", Photon.Pun.RpcTarget.Others, 0);
         }
     }
     public void ToggleLowGravity()

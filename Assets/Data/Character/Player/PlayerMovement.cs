@@ -129,7 +129,6 @@ public class PlayerMovement : Player
             isPulling = true;
             pullDir = GetCurrentDir();
         }
-        playerPunCallBack.photonView.RPC("PullOther", RpcTarget.Others);
     }
     // dash
     public void SetDashing(bool dashing){
@@ -137,15 +136,14 @@ public class PlayerMovement : Player
     }
     // disengage
     public void Disengage(){
-        if(box && GetComponent<FixedJoint>()
-        ){
+        if(box && GetComponent<FixedJoint>())
+        {
             GetComponent<FixedJoint>().breakTorque = 0;
             GetComponent<FixedJoint>().breakForce = 0;
             box.GetComponent<Rigidbody>().mass = 999;
             animator.SetTrigger("Disengage");
             isPulling = false;
         }
-
     }
     // interact
     public void SetInteract(bool toggle){
