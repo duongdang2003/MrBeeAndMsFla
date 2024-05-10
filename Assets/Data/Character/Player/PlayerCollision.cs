@@ -7,6 +7,9 @@ public class PlayerCollision : Player
     private void OnCollisionEnter(Collision other) {
         if(other.gameObject.CompareTag("Slime")) {
             other.gameObject.transform.parent.GetComponent<Slime>().Death();
+        } else if(other.gameObject.CompareTag("Glub")) {
+            Debug.Log("Glub");
+            other.gameObject.transform.parent.GetComponent<Glub>().Death();
         }
         if(other.gameObject.CompareTag("DoorDeadZone") ||
            other.gameObject.CompareTag("Spike")){

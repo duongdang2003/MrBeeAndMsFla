@@ -92,7 +92,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         createRoomPanel.SetActive(false);
         roomPanel.SetActive(false);
         findRoomPanel.SetActive(false);
-        menuObj.SetActive(false);
+        // menuObj.SetActive(false);
     }
     public override void OnConnectedToMaster()
     {
