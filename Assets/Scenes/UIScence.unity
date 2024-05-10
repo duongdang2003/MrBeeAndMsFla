@@ -15464,7 +15464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1635304239
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16039,7 +16039,7 @@ MonoBehaviour:
   createRoomPanel: {fileID: 825766807}
   findRoomPanel: {fileID: 383040815}
   roomPanel: {fileID: 1635304238}
-  roomNameInput: {fileID: 0}
+  roomNameInput: {fileID: 903690764}
   roomName: {fileID: 1370839033}
   playerName: {fileID: 2958397913583214301, guid: 86e2d1b8b79d548eaa99a70abd4eb2d2, type: 3}
   content: {fileID: 1801517475}
