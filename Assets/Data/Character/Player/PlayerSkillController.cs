@@ -79,7 +79,7 @@ public class PlayerSkillController : Player
         }
     }
     public void SetLowGravity(){
-        isLowGravity = !isLowGravity;
+        ToggleLowGravity();
         if (isLowGravity)
         {
             ResetJump();
