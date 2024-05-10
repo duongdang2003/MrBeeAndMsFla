@@ -212,10 +212,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: bdf
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 510601f01109e9244aa98eac485f09de, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: 510601f01109e9244aa98eac485f09de, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9cc25151cb8b641daba6dc0c17b23633, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: 9cc25151cb8b641daba6dc0c17b23633, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
