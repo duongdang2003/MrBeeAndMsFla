@@ -17,9 +17,9 @@ public class Glub : Enemy
         void Update()
     {
         if(!isDeath){
-            Debug.DrawRay(transform.position + new Vector3(0, 0.25f, 0), transform.TransformDirection(Vector3.forward) * 30, Color.white);
+            Debug.DrawRay(transform.position + new Vector3(0, 0.25f, 0), transform.TransformDirection(Vector3.forward) * 6, Color.white);
             RaycastHit hit;
-            if(Physics.Raycast(transform.position + new Vector3(0, 0.25f, 0), transform.TransformDirection(Vector3.forward), out hit, 30, 1 << 7)){
+            if(Physics.Raycast(transform.position + new Vector3(0, 0.25f, 0), transform.TransformDirection(Vector3.forward), out hit, 6, 1 << 7)){
                 animator.SetTrigger("Attack");
                 speed = 0;
             } else {
@@ -57,7 +57,7 @@ public class Glub : Enemy
     }
     public void FireBullet(){
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.transform.position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody>().velocity = Vector3.forward * direction * 8;
+        bullet.GetComponent<Rigidbody>().velocity = Vector3.forward * direction * 4;
         Destroy(bullet, 5);
     }
     public void EndAttack(){
