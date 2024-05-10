@@ -86,13 +86,13 @@ public class SwapButton : MonoBehaviourPunCallbacks
             flaName.transform.position = locationNameRight;
         }
     }
-    public void SetBeginRoom()
-    {
-        //bee.transform.position = locationCharacterLeft;
-        //beeName.position = locationNameLeft;
-        //fla.transform.position = locationCharacterRight;
-        //flaName.position = locationCharacterRight;
-    }
+    //public void SetBeginRoom()
+    //{
+    //    //bee.transform.position = locationCharacterLeft;
+    //    //beeName.position = locationNameLeft;
+    //    //fla.transform.position = locationCharacterRight;
+    //    //flaName.position = locationCharacterRight;
+    //}
     public void SetDefaultLocation()
     {
         bee.transform.position = locationCharacterLeft;
